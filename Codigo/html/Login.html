@@ -3,11 +3,145 @@
 	<head>
 	</head>
 
+	<style>
+		
+		.retangulo{
+			position: absolute;
+			z-index: -1;
+			width: 100%;
+			height: 90px;
+			left: 0px;
+			top: 0px;
+			background: #65909E;
+		}
+
+		.logobranco{
+			position: absolute;
+			width: 93px;
+			height: 77px;
+			left: 24px;
+			top: 9px;
+
+			background: url(logobranco.png);
+		}
+
+		.textoLogin{
+			position: absolute;
+			width: 267px;
+			height: 137px;
+			left: 182px;
+			top: 204px;
+
+			font-family: Roboto;
+			font-style: normal;
+			font-weight: normal;
+			line-height: normal;
+			font-size: 48px;
+
+			color: #000000;
+		}
+
+		.textoEmail{
+			position: absolute;
+			width: 178px;
+			height: 50px;
+			left: 182px;
+			top: 316px;
+
+			font-family: Roboto;
+			font-style: normal;
+			font-weight: normal;
+			line-height: normal;
+			font-size: 30px;
+
+			color: #000000;
+		}
+
+		.textoPass{	
+			position: absolute;
+			width: 176px;
+			height: 49px;
+			left: 184px;
+			top: 393px;
+
+			font-family: Roboto;
+			font-style: normal;
+			font-weight: normal;
+			line-height: normal;
+			font-size: 30px;
+
+			color: #000000;
+		}
+
+		.emailcaixa{
+			position: absolute;
+			width: 291px;
+			height: 44px;
+			left: 368px;
+			top: 314px;
+
+			background: #FFFFFF;
+			border: 2px solid #000000;
+			box-sizing: border-box;
+		}
+
+		.passcaixa{
+			position: absolute;
+			width: 291px;
+			height: 44px;
+			left: 369px;
+			top: 391px;
+
+			background: #FFFFFF;
+			border: 2px solid #000000;
+			box-sizing: border-box;
+		}
+
+		.btnRecPass{
+			position: absolute;
+			width: 195px;
+			height: 38px;
+			left: 479px;
+			top: 468px;
+
+			font-family: Roboto;
+			font-style: normal;
+			font-weight: normal;
+			line-height: normal;
+			font-size: 24px;
+
+			color: #000000;
+		}
+
+		.btnLogin{
+			position: absolute;
+			width: 195px;
+			height: 38px;
+			left: 270px;
+			top: 468px;
+
+			font-family: Roboto;
+			font-style: normal;
+			font-weight: normal;
+			line-height: normal;
+			font-size: 24px;
+
+			color: #000000;
+		}
+
+	</style>
+
 	<body>
 
-		<input id="email" type="text" placeholder="e-mail">
-		<input id="password" type="password" placeholder="password">
-		<button type="button" id="BLogin" >Log In</button>
+		<div class="retangulo"></div>
+		<div class="logobranco"></div>
+		<div class="textoLogin">LOG IN</div>
+		<div class="textoEmail">E-mail:</div>
+		<div class="textoPass">Password:</div>
+		<input id="email" type="text" class="emailcaixa">
+		<input id="password" type="password" class="passcaixa">
+		<button type="button" id="BLogin" class="btnLogin" >Log In</button>
+		<button type="button" id="BRecPass" class="btnRecPass" >Forgot password</button>
 
 	</body>
 

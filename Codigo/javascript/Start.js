@@ -1,4 +1,3 @@
-"use strict";
 
 (function(){
 	window.addEventListener("load", main);
@@ -6,7 +5,7 @@
 
 function main(){
 	var blogin = document.getElementById("BLogin");
-	var bsign = document.getElementById("BSign");
+	var bsign = document.getElementById("BSignUp");
 
 	blogin.addEventListener("click", bLoginPressed);
 	bsign.addEventListener("click", bSignPressed);

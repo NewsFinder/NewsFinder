@@ -8,6 +8,7 @@ function main(){
 	var txtemail = document.getElementById("email");
 	var txtPassword = document.getElementById("password");
 	var btnLogin = document.getElementById("BLogin");
+	var btnRec = document.getElementById("BRecPass");
 
 	//Evento Login
 	btnLogin.addEventListener("click" , e => {
@@ -17,8 +18,12 @@ function main(){
 		var auth = firebase.auth();   	// Firebase autenticação
 
 		var confirmation = auth.signInWithEmailAndPassword(email, pass);
-		confirmation.catch(e => console.log(e.message));
+		confirmation.catch(e => alert("Não existe um utilizador com esse e-mail."));
 
+	});
+
+	btnRec.addEventListener("click", e => {
+		window.location.href = "../html/forgetPassword.html"
 	});
 
 	//Verificação a tempo real

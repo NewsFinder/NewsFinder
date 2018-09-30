@@ -1,4 +1,4 @@
-const carct = "1234567890`~!@#$%^&*()-_+={[}]|:;'/?.>,<€"+'"'; //Fazer verificacao
+const caract = "1234567890`~!@#$%^&*()-_+={[}]|:;'/?.>,<€ "+'"';
 
 (function(){
 	window.addEventListener("load", main);
@@ -13,10 +13,9 @@ function main(){
 	var txtLastName = document.getElementById("LastName");
 	var btnSignUp = document.getElementById("BSignUp");
 
-	//Evento Login
 	btnSignUp.addEventListener("click" , e => {
 
-		var email = txtemail.value;   	// verificar que é e-mail real
+		var email = txtemail.value;
 		var pass = txtPassword.value;
 		var conf = txtConfirma.value;
 		var fName = txtFirstName.value;
@@ -36,10 +35,29 @@ function main(){
 			alert("Os nomes devem ter no mínimo 3 caracteres.");
 		}
 		else{
-			var confirmation = auth.createUserWithEmailAndPassword(email, pass);
-			confirmation.catch(e => alert("O e-mail não é válido."));
+			var controlo = 0;
+			for(var i=0; i<caract.length; i++){
+				for(var j=0; j<fName.length; j++){
+					if(caract[i] == fName[j]){
+						controlo++;
+					}
+				}
+			}
+			for(var i=0; i<caract.length; i++){
+				for(var j=0; j<lName.length; j++){
+					if(caract[i] == lName[j]){
+						controlo++;
+					}
+				}
+			}
+			if(controlo == 0){
+				var confirmation = auth.createUserWithEmailAndPassword(email, pass);
+				confirmation.catch(e => alert("O e-mail não é válido."));
+			}
+			else{
+				alert("Os nomes nao podem conter caracteres especias!");
+			}
 		}
-
 	});
 
 	//Verificação a tempo real
@@ -55,11 +73,9 @@ function main(){
 			}).catch(function(error) {
   				console.log("Erro a guardar o nome");
 			});
-			console.log(firebaseUser);
-			window.location.href = "../html/forgetPassword.html";
-		}
-		else{
-			console.log("Logout");
+			firebase.auth().signOut();
+			window.location.href = "../html/start.html";
+
 		}
 	})
 }

@@ -56,10 +56,7 @@ function main(){
   				console.log("Erro a guardar o nome");
 			});
 			console.log(firebaseUser);
-			firebase.auth().signOut();
-			alert("Registado com sucesso");
-			//window.location.href = "../html/Start.html";
-			// Entrou. Mudar para pagina feed
+			window.location.href = "../html/forgetPassword.html";
 		}
 		else{
 			console.log("Logout");

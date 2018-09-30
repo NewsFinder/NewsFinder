@@ -23,7 +23,7 @@ function main(){
 	});
 
 	btnRec.addEventListener("click", e => {
-		window.location.href = "../html/forgetPassword.html"
+		window.location.href = "../html/forgetPassword.html";
 	});
 
 	//Verificação a tempo real
@@ -32,8 +32,7 @@ function main(){
 		if(firebaseUser){
 			console.log(firebaseUser);
 			// Entrou. Mudar para pagina feed
-			alert("Login efetuado com sucesso");
-			firebase.auth().signOut();
+			window.location.href = "../html/feed.html";
 		}
 		else{
 			console.log("Logout");

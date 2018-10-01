@@ -13,8 +13,35 @@ function main(){
 	var txtLastName = document.getElementById("LastName");
 	var btnSignUp = document.getElementById("BSignUp");
 
-	btnSignUp.addEventListener("click" , e => {
+	txtemail.onkeypress = function(event){
+                if (event.keyCode == 13){
+                    verificar();
+                }
+            };
+	txtPassword.onkeypress = function(event){
+                if (event.keyCode == 13){
+                    verificar();
+                }
+            };
+	txtConfirma.onkeypress = function(event){
+                if (event.keyCode == 13){
+                    verificar();
+                }
+            };
+	txtFirstName.onkeypress = function(event){
+                if (event.keyCode == 13){
+                    verificar();
+                }
+            };
+	txtLastName.onkeypress = function(event){
+                if (event.keyCode == 13){
+                    verificar();
+                }
+            };
 
+	btnSignUp.addEventListener("click" , verificar);
+
+	function verificar(){
 		var email = txtemail.value;
 		var pass = txtPassword.value;
 		var conf = txtConfirma.value;
@@ -58,7 +85,7 @@ function main(){
 				alert("Os nomes nao podem conter caracteres especias!");
 			}
 		}
-	});
+	}
 
 	//Verificação a tempo real
 	firebase.auth().onAuthStateChanged(firebaseUser => {
@@ -69,13 +96,10 @@ function main(){
 			user.updateProfile({
   				displayName: fName+"|"+lName
 			}).then(function() {
-  				//console.log("Com sucesso!");
+  				window.location.href = "../html/feed.html";
 			}).catch(function(error) {
   				console.log("Erro a guardar o nome");
 			});
-			firebase.auth().signOut();
-			window.location.href = "../html/start.html";
-
 		}
 	})
 }

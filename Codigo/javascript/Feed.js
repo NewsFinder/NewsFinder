@@ -41,14 +41,16 @@ function main(){
 		request.send();
 		request.onload = function() {
 	  		var data = request.response;
-	  		if(data.status == "ok" && data.totalResults != 0){
+
+
+            if(data.status == "ok" && data.totalResults != 0){
 	  			var title = document.getElementById("title");
 	  			var author = document.getElementById("author");
 	  			var feed = document.getElementById("Feed");
 	  			var link = document.getElementById("link");
 		  		var num = Math.floor(Math.random() * data.articles.length);
 		  		if(data.articles[num].title != null)
-	  				title.innerHTML = "Title: "+data.articles[num].title;
+	  				title.innerHTML = " "+data.articles[num].title;
 	  			else
 	  				title.innerHTML = "Title: Unknown Title";
 	  			if(data.articles[num].author != null)
@@ -56,17 +58,19 @@ function main(){
 	  			else
 	  				author.innerHTML = "Author: Unknown Author";
 	  			if(data.articles[num].description != null)
-	  				feed.innerHTML = "Description: "+data.articles[num].description;
+	  				feed.innerHTML = " "+data.articles[num].description;
 	  			else
 	  				feed.innerHTML = "Description: Unknown Description";
 	  			link.setAttribute("href", data.articles[num].url);
 	  			controlo = 1;
-	  		}
+
+            }
 	  		if(controlo == 0){
 	  			carregarFeed();
 	  		}else{
 	  			controlo = 0;
 	  		}
+
 		}
 	}
 
@@ -74,8 +78,9 @@ function main(){
 	next.addEventListener("click", carregarFeed);
 	logout.addEventListener("click", logingOut);
 
+
 	function logingOut(){
 		firebase.auth().signOut();
-		window.location.href = "../html/start.html";
+		window.location.href = "../html/index.html";
 	}
 }

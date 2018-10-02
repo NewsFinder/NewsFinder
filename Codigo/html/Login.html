@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 	<head>
 	</head>
@@ -163,3 +163,171 @@
 
 	<script type="text/javascript" src="../javascript/Login.js"></script>
 </html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=“UTF-8”>
+	<title>login</title>
+	<meta name=“viewport” content=“width=device-width,
+		  initial-scale=1">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<style>
+</style>
+
+<body>
+
+<header>
+	<div class="menu"></div>
+	<nav class="nav">
+		<div class="logobranco"><img src="../resources/logobranco.png" alt="logo" width="70" height="70"/></div>
+	</nav>
+</header>
+<h1>Login</h1>
+
+<span class="email">E-mail:</span>
+<span class="pass">Password:</span>
+
+<input id="email" type="text" class="emailcaixa">
+<input id="password" type="password" class="passcaixa">
+
+<button type="button" id="BLogin" class="btnLogin" >Log In</button>
+<button type="button" id="BuRecPass" class="btnRecPass" >Forgot password</button>
+
+</body>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyArg5CxQa8i555rllPY4TQTQOK8gl7TWb4",
+        authDomain: "newsfinder-5a095.firebaseapp.com",
+        databaseURL: "https://newsfinder-5a095.firebaseio.com",
+        projectId: "newsfinder-5a095",
+        storageBucket: "newsfinder-5a095.appspot.com",
+        messagingSenderId: "814840962770"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script type="text/javascript" src="../javascript/Login.js"></script>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=“UTF-8”>
+	<title>login</title>
+	<meta name=“viewport” content=“width=device-width,
+		  initial-scale=1">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<style>
+	.pass{
+		position: absolute;
+		left: 20%;
+		top: 332px;
+		font-size: 20px;
+		color: #000000;
+		margin: 0 0;
+
+	}
+
+	#email{
+		position: relative;
+		width: 300px;
+		height: 27px;
+		left: 22%;
+		top: 180px;
+		background: #FFFFFF;
+		border: 1px solid #000000;
+		box-sizing: border-box;
+	}
+
+	#password{
+		position: relative;
+		width: 300px;
+		height: 27px;
+		left:0%;
+		top: 230px;
+		background: #FFFFFF;
+		border: 1px solid #000000;
+		box-sizing: border-box;
+	}
+
+	#BLogin{
+		position: absolute;
+		width: 200px;
+		left: 40%;
+		top: 430px;
+		border: none;
+		background: #FFFFFF;
+		font-family: Drugs;
+		font-size: 22px;
+		color: #000000;
+	}
+
+	#BLogin:hover{
+		color: #65909E;
+		font-weight: bolder;
+	}
+
+	#BRecPass{
+		position: absolute;
+		width: 200px;
+		left: 40%;
+		top: 365px;
+		border: none;
+		background: #FFFFFF;
+		font-family: Drugs;
+		font-size: 14px;
+		color: #000000;
+	}
+
+	#BRecPass:hover {
+		color: #65909E;
+	}
+</style>
+
+<body>
+
+<header>
+	<div class="menu"></div>
+	<nav class="nav">
+		<div class="logobranco"><img src="../resources/logobranco.png" alt="logo" width="70" height="70"/></div>
+	</nav>
+</header>
+<h1>Login</h1>
+
+<span class="email">E-mail:</span>
+<span class="pass">Password:</span>
+
+<input id="email" type="text" class="emailcaixa">
+<input id="password" type="password" class="passcaixa">
+
+<button type="button" id="BLogin" class="btnLogin" >Log In</button>
+<button type="button" id="BRecPass" class="btnRecPass" >Forgot password</button>
+
+</body>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyArg5CxQa8i555rllPY4TQTQOK8gl7TWb4",
+        authDomain: "newsfinder-5a095.firebaseapp.com",
+        databaseURL: "https://newsfinder-5a095.firebaseio.com",
+        projectId: "newsfinder-5a095",
+        storageBucket: "newsfinder-5a095.appspot.com",
+        messagingSenderId: "814840962770"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script type="text/javascript" src="../javascript/Login.js"></script>

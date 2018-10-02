@@ -27,7 +27,7 @@ function main(){
 
 			auth.sendPasswordResetEmail(email).then(function() {
   				alert("Enviamos um e-mail para alteracao da password.");
-  				window.location.href = "../html/start.html";
+  				window.location.href = "../html/index.html";
 			}).catch(function(error) {
 				alert("Nao existe um utilizador com o e-mail inserido.");
 			});

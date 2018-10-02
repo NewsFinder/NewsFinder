@@ -11,15 +11,16 @@ function main(){
 	var btnRec = document.getElementById("BRecPass");
 
 	txtemail.onkeypress = function(event){
-                if (event.keyCode == 13){
-                    verificar();
-                }
-            };
+        if (event.keyCode == 13){
+            verificar();
+        }
+    };
+
 	txtPassword.onkeypress = function(event){
-                if (event.keyCode == 13){
-                    verificar();
-                }
-            };
+        if (event.keyCode == 13){
+            verificar();
+        }
+    };
 
 	//Evento Login
 	btnLogin.addEventListener("click" , verificar);
@@ -53,7 +54,7 @@ function main(){
 		if(firebaseUser){
 			console.log(firebaseUser);
 			// Entrou. Mudar para pagina feed
-			window.location.href = "../html/feed.html";
+			//window.location.href = "../html/feed.html";
 		}
 	})
 }

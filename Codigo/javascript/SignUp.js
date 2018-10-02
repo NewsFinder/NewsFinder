@@ -96,6 +96,7 @@ function main(){
 			user.updateProfile({
   				displayName: fName+"|"+lName
 			}).then(function() {
+				console.log(firebaseUser);
   				window.location.href = "../html/dados.html";
 			}).catch(function(error) {
   				console.log("Erro a guardar o nome");

@@ -27,9 +27,10 @@ function main(){
 	  });
 	}
 
+
 	window.addEventListener("beforeunload", function(e){
 		firebase.auth().signOut();
-	}, false);
+	}, true);
 
 	var controlo = 0;
 

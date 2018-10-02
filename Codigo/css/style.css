@@ -1,0 +1,65 @@
+body{
+    font-family: Drugs;
+}
+
+/*///////////////////////////FORGET PASSWORD PAGE////////////////////////// */
+
+header{
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    left: 0px;
+    top: 0px;
+    background: #65909E;
+}
+
+.logobranco{
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    margin-left: 30px;
+    margin-top: 10px;
+
+}
+
+h1{
+    position: relative;
+    font-size: 40px;
+    left: 20%;
+    top: 150px;
+    color: #000000;
+}
+
+.email{
+    position: relative;
+    width:40px;
+    left: 20%;
+    top: 180px;
+    font-size: 20px;
+    color: #000000;
+}
+
+.emailcaixa{
+    position: relative;
+    width: 300px;
+    height: 27px;
+    left: 22%;
+    top: 180px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+.btnRecPass{
+    position: absolute;
+    left: 20%;
+    top: 340px;
+    border: none;
+    background: #FFFFFF;
+    font-family: Drugs;
+    font-size: 14px;
+    color: #000000;
+}
+.btnRecPass:hover{
+    color: #65909E;
+}

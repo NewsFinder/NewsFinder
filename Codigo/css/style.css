@@ -1,0 +1,51 @@
+
+
+/*///////////////PAGINA INICIAL///////////////////////////////////*/
+
+#logoinicial{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    top: 70px;
+}
+
+.vl{
+    width:4px;
+    float: left;
+    background-color:#000;
+    position:absolute;
+    top:430px;
+    height: 100px;
+    left:50%;
+    z-index: 1;
+}
+
+
+.blogin{
+    float: left;
+    position: relative;
+    width: 192px;
+    height: 36px;
+    top: 150px;
+    left: 30%;
+    font-size: 30px;
+    color: #000000;
+    background-color: white;
+    border: none;
+}
+
+.bsign{
+    float: right;
+    position: relative;
+    width: 192px;
+    height: 36px;
+    right: 30%;
+    top: 150px;
+    font-size: 30px;
+    color: #000000;
+    background-color: white;
+    border: none;
+}
+/*//////////////////////////////////////////////////*/

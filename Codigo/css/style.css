@@ -26,12 +26,8 @@
 .blogin{
     float: left;
     position: relative;
-    width: 192px;
-    height: 36px;
     top: 150px;
     left: 30%;
-    font-size: 30px;
-    color: #000000;
     background-color: white;
     border: none;
 }
@@ -39,13 +35,23 @@
 .bsign{
     float: right;
     position: relative;
-    width: 192px;
-    height: 36px;
     right: 30%;
     top: 150px;
-    font-size: 30px;
-    color: #000000;
     background-color: white;
     border: none;
+}
+
+.text1{
+    width: 192px;
+    height: 36px;
+    font-size: 30px;
+}
+
+.blogin:hover{
+    text-decoration: underline;
+}
+
+.bsign:hover{
+    text-decoration: underline;
 }
 /*//////////////////////////////////////////////////*/

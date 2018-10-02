@@ -1,13 +1,13 @@
-
+<<<<<<< HEAD
 body{
     font-family: Drugs;
 }
 
 /*///////////////////////////FORGET PASSWORD PAGE////////////////////////// */
-
+=======
 
 /*/////////////////MENU//////////////////////////////////////////*/
-
+>>>>>>> 4c6ca128c585ce58ec7d611e75d84a510080bc84
 
 header{
     position: fixed;
@@ -27,7 +27,7 @@ header{
 
 }
 
-
+<<<<<<< HEAD
 h1{
     position: relative;
     font-size: 40px;
@@ -66,9 +66,9 @@ h1{
     font-size: 14px;
     color: #000000;
 }
-.btnRecPass:hover {
+.btnRecPass:hover{
     color: #65909E;
-}
+=======
 
 
 /*///////////////PAGINA INICIAL///////////////////////////////////*/
@@ -140,5 +140,5 @@ h1{
     float:left;
     width: 50%;
     left:10%;
-
+>>>>>>> 4c6ca128c585ce58ec7d611e75d84a510080bc84
 }

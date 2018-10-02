@@ -2,7 +2,14 @@
 
 <html>
 	<head>
+		<meta charset="UTF-8">
+		<title>NewsFinder</title>
+		<meta name="viewport" content="width=device-width,
+initial-scale=1">
+		<link rel="stylesheet" href="../css/style.css">
 		<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+		<script type="text/javascript" src="../javascript/Feed.js"></script>
+
 		<script>
 		  // Initialize Firebase
 		  var config = {
@@ -16,11 +23,19 @@
 		  firebase.initializeApp(config);
 		</script>
 			
-		<script type="text/javascript" src="../javascript/Feed.js"></script>
 	</head>
+
+	<header>
+		<div class="menu"></div>
+		<nav class="nav">
+			<div class="logobranco"><img src="../resources/logobranco.png" alt="logo" width="70" height="70"/></div>
+		</nav>
+	</header>
 
 
 	<body>
+
+	<div class="noticia">
 	<output id="Nome" type="text"></output>
 	<p></p>
 	<output id="title" type="text"></output>
@@ -32,6 +47,7 @@
 	<a id="link" href="">Link to the Page.</a>
 	<p></p>
 	<button id="Next">Next Feed</button>
-	<button id="LogOut">Log Out</button>	
+	<button id="LogOut">Log Out</button>
+	</div>
 	</body>
 </html>

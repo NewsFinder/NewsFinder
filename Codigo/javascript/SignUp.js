@@ -96,7 +96,7 @@ function main(){
 			user.updateProfile({
   				displayName: fName+"|"+lName
 			}).then(function() {
-  				window.location.href = "../html/feed.html";
+  				window.location.href = "../html/dados.html";
 			}).catch(function(error) {
   				console.log("Erro a guardar o nome");
 			});

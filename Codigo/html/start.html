@@ -1,68 +1,25 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<style>
-			.logo{
-				position: absolute;
-				width: 398px;
-				height: 242px;
-				left: 35%;
-				top: 164px;
-			}
-
-			.divisao{
-				position: absolute;
-				width: 105px;
-				height: 0px;
-				left: 44.5%;
-				top: 472px;
-
-				border: 2px solid #000000;
-				transform: rotate(90deg);
-			}
-
-			.blogin{
-				position: absolute;
-				width: 192px;
-				height: 36px;
-				left: 34%;
-				top: 462px;
-
-				font-family: Roboto;
-				font-style: normal;
-				font-weight: normal;
-				line-height: normal;
-				font-size: 30px;
-
-				color: #000000;
-			}
-
-			.bsign{
-				position: absolute;
-				width: 192px;
-				height: 36px;
-				left: 50%;
-				top: 462px;
-
-				font-family: Roboto;
-				font-style: normal;
-				font-weight: normal;
-				line-height: normal;
-				font-size: 30px;
-
-				color: #000000;
-			}
-
-
-		</style>
+		<meta charset="UTF-8">
+		<title>NewsFinder</title>
+		<link rel="stylesheet" href="../css/style.css">
+		<meta name=“viewport” content=“width=device-width,
+			  initial-scale=1">
 	</head>
 
+
+
 	<body>
-		<img src="../resources/newsFinderLogo.png" alt="NewsFinderLogo" class="logo" >
-		<div style="padding-left: 45%">
-			<button type="button" id="BLogin" style="background-color: white; border: none" class = "blogin">Log In</button>
-			<img src="../resources/logInImg.png" alt="ImgAcessorio" class ="divisao">
-			<button type="button" id="BSignUp" style="background-color: white; border: none" class = "bsign">Sign Up</button>
+		<img id="logoinicial" src="../resources/newsFinderLogo.png" alt="NewsFinderLogo" >
+		<div>
+			<button type="button" id="BLogin"  class = "blogin"><span class="text1">Log In</span></button>
+
+			<div class="vl"></div>
+
+
+
+			<button type="button" id="BSignUp"  class = "bsign"><span class="text1">Sign Up</span></button>
 		</div>
 	</body>
 

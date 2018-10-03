@@ -4,22 +4,23 @@
 }());
 
 function main(){
-
+	firebase.auth().signOut();
 	var txtemail = document.getElementById("email");
 	var txtPassword = document.getElementById("password");
 	var btnLogin = document.getElementById("BLogin");
 	var btnRec = document.getElementById("BRecPass");
 
 	txtemail.onkeypress = function(event){
-                if (event.keyCode == 13){
-                    verificar();
-                }
-            };
+        if (event.keyCode == 13){
+            verificar();
+        }
+    };
+
 	txtPassword.onkeypress = function(event){
-                if (event.keyCode == 13){
-                    verificar();
-                }
-            };
+        if (event.keyCode == 13){
+            verificar();
+        }
+    };
 
 	//Evento Login
 	btnLogin.addEventListener("click" , verificar);
@@ -31,14 +32,14 @@ function main(){
 		var auth = firebase.auth();   	// Firebase autenticação
 
 		if(email.length == 0){
-			alert("O campo e-mail está vazio.");
+			alert("The email field is empty.");
 		}
 		else if(pass.length == 0){
-			alert("O campo password esta vazio.");
+			alert("The password field is empty.");
 		}
 		else{
 			var confirmation = auth.signInWithEmailAndPassword(email, pass);
-			confirmation.catch(e => alert("Não existe um utilizador com esse e-mail."));
+			confirmation.catch(e => alert("There is no user with this email."));
 		}
 
 	}
@@ -51,8 +52,7 @@ function main(){
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 
 		if(firebaseUser){
-			console.log(firebaseUser);
-			// Entrou. Mudar para pagina feed
+			//Entrou. Mudar para pagina feed
 			window.location.href = "../html/feed.html";
 		}
 	})

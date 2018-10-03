@@ -5,7 +5,7 @@ const caract = "1234567890`~!@#$%^&*()-_+={[}]|:;'/?.>,<€ "+'"';
 }());
 
 function main(){
-
+	firebase.auth().signOut();
 	var txtemail = document.getElementById("email");
 	var txtPassword = document.getElementById("password");
 	var txtConfirma = document.getElementById("confpassword");
@@ -50,16 +50,16 @@ function main(){
 		var auth = firebase.auth();   	// Firebase autenticação
 
 		if(email.length == 0){
-			alert("O campo e-mail está vazio.");
+			alert("The email field is empty.");
 		}
 		else if(pass.length<6 || pass.length>24){
-			alert("A password deve conter entre 6 a 24 caracteres.");
+			alert("The password must be between 6 and 24 characters.");
 		}
 		else if(pass!=conf){
-			alert("As passwords têm de coincidir.");
+			alert("Passwords must match.");
 		}
 		else if(fName.length<2 || lName.length<2){
-			alert("Os nomes devem ter no mínimo 3 caracteres.");
+			alert("Names must be at least 3 characters.");
 		}
 		else{
 			var controlo = 0;
@@ -79,10 +79,10 @@ function main(){
 			}
 			if(controlo == 0){
 				var confirmation = auth.createUserWithEmailAndPassword(email, pass);
-				confirmation.catch(e => alert("O e-mail não é válido."));
+				confirmation.catch(e => alert("Email format is not valid."));
 			}
 			else{
-				alert("Os nomes nao podem conter caracteres especias!");
+				alert("Names can not contain special characters.");
 			}
 		}
 	}

@@ -4,6 +4,7 @@
 }());
 
 function main(){
+	firebase.auth().signOut();
 	var blogin = document.getElementById("BLogin");
 	var bsign = document.getElementById("BSignUp");
 

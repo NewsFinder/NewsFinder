@@ -197,13 +197,28 @@
 		<div class="unidade">Research Unit </div>
 		<div class="interesses">Interests </div>
 
-		<input id="foto" type="text" class="b_foto">
+		<input id="foto" type="file" class="b_foto">
 		<input id="orcid" type="text" class="b_orcid">
 		<input id="filiacao" type="text" class="b_filiacao">
 		<input id="unidade" type="text" class="b_unidade">
 		<input id="interesses" type="text" class="b_interesses">
 
 		<button type="button" id="Save" class = "bsave"><span class="text1">Save</span></button>
+
+		<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyArg5CxQa8i555rllPY4TQTQOK8gl7TWb4",
+		    authDomain: "newsfinder-5a095.firebaseapp.com",
+		    databaseURL: "https://newsfinder-5a095.firebaseio.com",
+		    projectId: "newsfinder-5a095",
+		    storageBucket: "newsfinder-5a095.appspot.com",
+		    messagingSenderId: "814840962770"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+		<script type="text/javascript" src="../javascript/dados.js"></script>
 
 	</body>
 

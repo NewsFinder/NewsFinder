@@ -8,108 +8,198 @@
 initial-scale=1">
 
 </head>
+
 <style>
 
+	.bfeed{
+		position: absolute;
+		width: 98px;
+		height: 31px;
+		left: 1029px;
+		top: 26px;
 
-		.foto{
-			position: absolute;
-			width: 147px;
-			height: 144px;
-			left: 104px;
-			top: 132px;
-			background: #C4C4C4;
-		}
+		font-style: normal;
+		font-weight: normal;
+		line-height: normal;
+		font-size: 20px;
 
-		.nome{
-			position: absolute;
-			width: 590px;
-			height: 70px;
-			left: 306px;
-			top: 159px;
+		color: #FFFFFF;
+	}
 
-			font-style: normal;
-			font-weight: normal;
-			line-height: normal;
-			font-size: 48px;
+	.bprofile{
+		position: absolute;
+		width: 105px;
+		height: 31px;
+		left: 1159px;
+		top: 26px;
 
-			color: #000000;
-		}
+		font-style: normal;
+		font-weight: normal;
+		line-height: normal;
+		font-size: 33px;
 
-		.orcid{
-			position: absolute;
-			width: 223px;
-			height: 43px;
+		color: #FFFFFF;
+	}
 
-			top: 45%;
-			left: 7%;
+	.foto{
+		position: absolute;
+		width: 147px;
+		height: 144px;
+		left: 10%;
+		top: 132px;
+		background: #C4C4C4;
+	}
 
-			font-style: normal;
-			font-weight: normal;
-			line-height: normal;
-			font-size: 36px;
+	.nome{
+		font-family: Drugs;
+		position: absolute;
+		width: 590px;
+		height: 70px;
+		left: 306px;
+		top: 159px;
+		font-style: normal;
+		font-weight: normal;
+		line-height: normal;
+		font-size: 48px;
 
-			color: #000000;
-		}
+		color: #000000;
+	}
 
-		.interesses{
-			position: absolute;
-			width: 631px;
-			height: 43px;
+	.orcid{
+		position: absolute;
+		width: 223px;
 
-			top: 55%;
-			left: 7%;
+		font-style: normal;
+		font-weight: normal;
+		line-height: normal;
+		font-size: 27px;
 
-			font-style: normal;
-			font-weight: normal;
-			line-height: normal;
-			font-size: 36px;
+		color: #000000;
+	}
 
-			color: #000000;
+	.interesses{
+		position: absolute;
+		width: 631px;
 
-		}
+		font-style: normal;
+		font-weight: normal;
+		line-height: normal;
+		font-size: 27px;
 
-		.unidade{
-			position: absolute;
-			width: 631px;
-			height: 43px;
+		color: #000000;
 
-			top: 65%;
-			left: 7%;
+	}
 
-			font-family: Roboto;
-			font-style: normal;
-			font-weight: normal;
-			line-height: normal;
-			font-size: 36px;
+	.unidade{
+		position: absolute;
+		width: 631px;
 
-			color: #000000;
-		}
+		font-family: Roboto;
+		font-style: normal;
+		font-weight: normal;
+		line-height: normal;
+		font-size: 27px;
 
-		.filiacao{
-			position: absolute;
-			width: 631px;
-			height: 43px;
+		color: #000000;
+	}
 
-			top: 75%;  
-			left: 7%;
+	.filiacao{
+		position: absolute;
+		width: 631px;
 
-			font-family: Roboto;
-			font-style: normal;
-			font-weight: normal;
-			line-height: normal;
-			font-size: 36px;
+		font-family: Roboto;
+		font-style: normal;
+		font-weight: normal;
+		line-height: normal;
+		font-size: 27px;
 
-			color: #000000;
-		}
+		color: #000000;
+	}
 
-	</style>
 
+
+	header{
+		position: fixed;
+		width: 100%;
+		height: 90px;
+		left: 0px;
+		top: 0px;
+		background: #65909E;
+	}
+
+	.logobranco{
+		position: fixed;
+		width: 20px;
+		height: 20px;
+		margin-left: 30px;
+		margin-top: 10px;
+
+	}
+
+	.menu {
+		width: 80%;
+		float: right;
+		position: relative;
+		right:5%;
+
+	}
+
+	header ul {
+		margin: 30px auto;
+		padding: 0 20px;
+		text-align: right;
+	}
+
+
+	header ul li a {
+		text-decoration: none;
+		color: white;
+		font-size:20px;
+		font-family: Drugs;
+
+
+	}
+
+		header li {
+		display: inline-block;
+		width: 150px;
+	}
+
+	header ul li a:hover {
+		font-weight:bolder;
+
+	}
+
+	#LogOut{
+		font-family: Drugs;
+		border: none;
+		background-color: transparent;
+		color: white;
+		font-size:20px;
+	}
+
+
+	#LogOut:hover {
+		font-weight:bolder;
+
+	}
+
+	#orcid, #foto, #filiacao, #unidade, #interesses{
+		position: relative;
+		width: 220px;
+		box-sizing: border-box;
+		font-family: Drugs;
+		margin: 10px 0px;
+		top:300px;
+		left:10%;
+	}
+</style>
 
 	<header>
 		<div class="logobranco"><img src="../resources/logobranco.png" alt="logo" width="70" height="70"/></div>
 		<div class="menu">
 
-			<nav class="nav"> <!--APAGAR AQUI O STYLE, FOI PARA TESTAR-->
+			<nav class="nav">
 				<ul>
 					<li>
 						<a href="../html/feed.html">Feed</a>
@@ -137,7 +227,6 @@ initial-scale=1">
 		<div id="unidade" class="unidade">Research Unit: </div>
 		<div id="filiacao" class="filiacao">Affiliation: </div>
 
-		<button id="LogOut">Log Out</button>
 	</body>
 
 	<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>

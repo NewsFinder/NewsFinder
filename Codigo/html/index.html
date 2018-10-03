@@ -3,17 +3,72 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>NewsFinder</title>
-		<link rel="stylesheet" href="../css/style.css">
 		<meta name=“viewport” content=“width=device-width,
 			  initial-scale=1">
 	</head>
 
+<style>
 
+	#logoinicial{
+		position: relative;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 500px;
+		top: 70px;
+	}
+
+	.vl{
+		width:4px;
+		float: left;
+		background-color:#000;
+		position:absolute;
+		top:430px;
+		height: 100px;
+		left:50%;
+		z-index: 1;
+	}
+
+
+	.blogin{
+		float: left;
+		position: relative;
+		top: 150px;
+		left: 30%;
+		background-color: white;
+		border: none;
+	}
+
+	.bsign{
+		float: right;
+		position: relative;
+		right: 30%;
+		top: 150px;
+		background-color: white;
+		border: none;
+	}
+
+	.text1{
+		width: 192px;
+		height: 36px;
+		font-size: 30px;
+		font-family: Drugs;
+		font-weight: bold;
+	}
+
+	.blogin:hover{
+		color: #65909E;
+	}
+
+	.bsign:hover{
+		color: #65909E;
+	}
+</style>
 
 	<body>
 		<img id="logoinicial" src="../resources/newsFinderLogo.png" alt="NewsFinderLogo" >
 		<div>
-			<button type="button" id="BLogin"  class = "blogin"><span class="text1">Log In</span></button>
+			<button type="button" id="BLogin"  class = "blogin"><span class="text1">Login</span></button>
 
 			<div class="vl"></div>
 

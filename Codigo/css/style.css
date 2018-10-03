@@ -35,12 +35,12 @@ h1{
 
 .btnRecPass{
     position: absolute;
-    left: 20%;
+    left: 40%;
     top: 340px;
     border: none;
     background: #FFFFFF;
     font-family: Drugs;
-    font-size: 14px;
+    font-size: 16px;
     color: #000000;
 }
 .btnRecPass:hover {
@@ -135,7 +135,7 @@ header ul li a:hover {
 }
 
 
-#orcid, #foto, #filiacao, #unidade, #interesses{
+ #orcid, #foto, #filiacao, #unidade, #interesses{
     position: relative;
     width: 220px;
     height: 27px;
@@ -206,58 +206,7 @@ header ul li a:hover {
 
 /*///////////////PAGINA INICIAL///////////////////////////////////*/
 
-#logoinicial{
-    position: relative;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 500px;
-    top: 70px;
-}
 
-.vl{
-    width:4px;
-    float: left;
-    background-color:#000;
-    position:absolute;
-    top:430px;
-    height: 100px;
-    left:50%;
-    z-index: 1;
-}
-
-
-.blogin{
-    float: left;
-    position: relative;
-    top: 150px;
-    left: 30%;
-    background-color: white;
-    border: none;
-}
-
-.bsign{
-    float: right;
-    position: relative;
-    right: 30%;
-    top: 150px;
-    background-color: white;
-    border: none;
-}
-
-.text1{
-    width: 192px;
-    height: 36px;
-    font-size: 30px;
-}
-
-.blogin:hover{
-    color: #65909E;
-}
-
-.bsign:hover{
-    color: #65909E;
-}
 
 
 /*///////////////FEED///////////////////////////////////*/
@@ -358,125 +307,5 @@ header ul li a:hover {
     color: #65909E;
 }
 
-/*/////////////////perfil////////////////////////////////////////*/
 
- .retangulo{
-     position: absolute;
-     z-index: 1;
-     width: 100%;
-     height: 90px;
-     left: 0px;
-     top: 0px;
-     background: #65909E;
- }
-
-
-.bfeed{
-    position: absolute;
-    width: 98px;
-    height: 31px;
-    left: 1029px;
-    top: 26px;
-
-    font-style: normal;
-    font-weight: normal;
-    line-height: normal;
-    font-size: 33px;
-
-    color: #FFFFFF;
-}
-
-.bprofile{
-    position: absolute;
-    width: 105px;
-    height: 31px;
-    left: 1159px;
-    top: 26px;
-
-    font-style: normal;
-    font-weight: normal;
-    line-height: normal;
-    font-size: 33px;
-
-    color: #FFFFFF;
-}
-
-#foto1{
-    position: absolute;
-    width: 147px;
-    height: 144px;
-    left: 104px;
-    top: 132px;
-    background: #C4C4C4;
-}
-
-#nome1{
-    position: absolute;
-    width: 590px;
-    height: 70px;
-    left: 306px;
-    top: 159px;
-
-    font-style: normal;
-    font-weight: normal;
-    line-height: normal;
-    font-size: 48px;
-
-    color: #000000;
-}
-
-#orcid1{
-    position: absolute;
-    width: 223px;
-    height: 43px;
-
-    font-style: normal;
-    font-weight: normal;
-    line-height: normal;
-    font-size: 36px;
-
-    color: #000000;
-}
-
-#interesses1{
-    position: absolute;
-    width: 631px;
-    height: 43px;
-
-    font-style: normal;
-    font-weight: normal;
-    line-height: normal;
-    font-size: 36px;
-
-    color: #000000;
-
-}
-
-#unidade1{
-    position: absolute;
-    width: 631px;
-    height: 43px;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    line-height: normal;
-    font-size: 36px;
-
-    color: #000000;
-}
-
-#filiacao1{
-    position: absolute;
-    width: 631px;
-    height: 43px;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    line-height: normal;
-    font-size: 36px;
-
-    color: #000000;
-}
 

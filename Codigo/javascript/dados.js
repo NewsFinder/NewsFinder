@@ -33,7 +33,7 @@ function main(){
 				var user = firebase.auth().currentUser;
 				var aux = user.displayName;
 				user.updateProfile({
-	  				displayName: aux+"|"+orcid.value+"|"+filiacao.value+"|"+unidade.value+"|"+interesses.value+"|"+reader.result
+	  				displayName: aux+"|"+orcid.value+"|"+filiacao.value+"|"+unidade.value+"|"+interesses.value+"|"//+reader.result
 				}).then(function() {
 					window.location.href="../html/feed.html";
 				}).catch(function(error) {

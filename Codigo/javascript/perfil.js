@@ -20,7 +20,7 @@ function main(){
 			filiacao.innerHTML += firebaseUser.displayName.split("|")[3];
 			unidade.innerHTML += firebaseUser.displayName.split("|")[4];
 			interesses.innerHTML += firebaseUser.displayName.split("|")[5];
-			foto.src = firebaseUser.displayName.split("|")[6];
+			//foto.src = firebaseUser.displayName.split("|")[6];
 		}
 	});
 

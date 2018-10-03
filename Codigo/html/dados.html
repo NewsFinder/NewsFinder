@@ -1,210 +1,69 @@
 <!DOCTYPE html>
 <html>
 
-	<style>
-		.retangulo{
-				position: absolute;
-				z-index: 1;
-				width: 100%;
-				height: 90px;
-				left: 0px;
-				top: 0px;
-				background: #65909E;
-		}
+<link rel="stylesheet" href="../css/style.css">
 
-		.customize{
-			position: absolute;
-			width: 478px;
-			height: 57px;
-			left: 126px;
-			top: 158px;
+	<header>
+		<div class="logobranco"><img src="../resources/logobranco.png" alt="logo" width="70" height="70"/></div>
+		<div class="menu">
 
-			font-family: Roboto;
-			font-style: normal;
-			font-weight: normal;
-			line-height: normal;
-			font-size: 48px;
+			<nav class="nav">
+				<ul>
+					<li>
+						<a href="../html/feed.html">Feed</a>
+					</li>
 
-			color: #000000;
-		}
+					<li>
+						<a href="../html/perfil.html">Profile</a>
+					</li>
 
-		.upload{
-			position: absolute;
-			width: 182px;
-			height: 60px;
-			left: 126px;
-			top: 271px;
+					<li>
+						<button id="LogOut">Log Out</button>
+					</li>
 
-			font-family: Roboto;
-			font-style: normal;
-			font-weight: normal;
-			line-height: normal;
-			font-size: 30px;
-
-			color: #000000;
-
-		}
-
-		.orcid{
-			position: absolute;
-			width: 182px;
-			height: 69px;
-			left: 126px;
-			top: 355px;
-
-			font-family: Roboto;
-			font-style: normal;
-			font-weight: normal;
-			line-height: normal;
-			font-size: 30px;
-
-			color: #000000;
-		}
-
-		.filiacao{
-			position: absolute;
-			width: 182px;
-			height: 68px;
-			left: 126px;
-			top: 443px;
-
-			font-family: Roboto;
-			font-style: normal;
-			font-weight: normal;
-			line-height: normal;
-			font-size: 30px;
-
-			color: #000000;
-		}
-
-		.unidade{
-			position: absolute;
-			width: 191px;
-			height: 60px;
-			left: 672px;
-			top: 271px;
-
-			font-family: Roboto;
-			font-style: normal;
-			font-weight: normal;
-			line-height: normal;
-			font-size: 30px;
-
-			color: #000000;
-		}
-
-		.interesses{
-			position: absolute;
-			width: 191px;
-			height: 69px;
-			left: 672px;
-			top: 350px;
-
-			font-family: Roboto;
-			font-style: normal;
-			font-weight: normal;
-			line-height: normal;
-			font-size: 30px;
-
-			color: #000000;
-		}
-
-		.b_foto{
-			position: absolute;
-			width: 292.32px;
-			height: 50.31px;
-			left: 315.94px;
-			top: 265.78px;
-
-			background: #FFFEFE;
-			border: 2px solid #000000;
-			box-sizing: border-box;
-		}
-
-		.b_orcid{
-			position: absolute;
-			width: 292.32px;
-			height: 50.31px;
-			left: 315.94px;
-			top: 350.31px;
-
-			background: #FFFEFE;
-			border: 2px solid #000000;
-			box-sizing: border-box;
-		}
-
-		.b_filiacao{
-			position: absolute;
-			width: 292.32px;
-			height: 50.31px;
-			left: 315.94px;
-			top: 440.87px;
-
-			background: #FFFEFE;
-			border: 2px solid #000000;
-			box-sizing: border-box;
-		}
-
-		.b_unidade{
-			position: absolute;
-			width: 292.32px;
-			height: 50.31px;
-			left: 870.78px;
-			top: 265.78px;
-
-			background: #FFFEFE;
-			border: 2px solid #000000;
-			box-sizing: border-box;
-		}
-
-		.b_interesses{
-			position: absolute;
-			width: 292.32px;
-			height: 50.31px;
-			left: 870.78px;
-			top: 350.31px;
-
-			background: #FFFEFE;
-			border: 2px solid #000000;
-			box-sizing: border-box;
-		}
-
-		.bsave{
-			position: absolute;
-			width: 153px;
-			height: 50px;
-			left: 1097px;
-			top: 477px;
-
-			font-family: Roboto;
-			font-style: normal;
-			font-weight: normal;
-			line-height: normal;
-			font-size: 24px;
-
-			color: #000000;
-		}
-
-	</style>
+				</ul>
+			</nav>
+		</div>
+	</header>
 
 	<body>
 		
-		<div class="customize">Customize your Profile </div>
-		<div class="retangulo"></div>
-		<div class="upload">Profile Photo </div>
-		<div class="orcid">ORCID </div>
-		<div class="filiacao">Affiliation </div>
-		<div class="unidade">Research Unit </div>
-		<div class="interesses">Interests </div>
+	<h1>Customize your profile </h1>
 
-		<input id="foto" type="file" class="b_foto">
-		<input id="orcid" type="text" class="b_orcid">
-		<input id="filiacao" type="text" class="b_filiacao">
-		<input id="unidade" type="text" class="b_unidade">
-		<input id="interesses" type="text" class="b_interesses">
+	<div class="dadosesq">
+		<div class="dadosesq2">
+			<p class="text">Profile Photo </p>
+			<p class="text">ORCID </p>
+			<p class="text">Affiliation </p>
+		</div>
 
-		<button type="button" id="Save" class = "bsave"><span class="text1">Save</span></button>
+		<div class="dadosdir2">
 
+			<input id="foto" type="file" class="b_foto">
+
+			<input id="orcid" type="text" class="b_orcid">
+
+			<input id="filiacao" type="text" class="b_filiacao">
+		</div>
+	</div>
+
+	<div class="dadosdir">
+
+		<div class="dadosesq3">
+
+			<p>Research Unit </p>
+			<p>Interests </p>
+		</div>
+
+		<div class="dadosdir3">
+
+			<input id="unidade" type="text" class="b_unidade">
+			<input id="interesses" type="text" class="b_interesses">
+			<br>
+			<button type="button" id="Save" class = "bsave"><span class="text1">Save</span></button>
+
+		</div>
+	</div>
 		<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
 		<script>
 		  // Initialize Firebase

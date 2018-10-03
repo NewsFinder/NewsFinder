@@ -1,33 +1,191 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	</head>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Sign Up</title>
+	<meta name=“viewport” content=“width=device-width,
+		  initial-scale=1">
+</head>
 
-	<body>
 
-		<input id="email" type="text" placeholder="e-mail">
-		<input id="password" type="password" placeholder="password">
-		<input id="confpassword" type="password" placeholder="confirmar password">
-		<input id="FirstName" type="text" placeholder="Primeiro Nome">
-		<input id="LastName" type="text" placeholder="Último Nome">
+<style>
+
+
+	header{
+		position: fixed;
+		width: 100%;
+		height: 90px;
+		left: 0px;
+		top: 0px;
+		background: #65909E;
+	}
+
+	.logobranco{
+		position: fixed;
+		width: 20px;
+		height: 20px;
+		margin-left: 30px;
+		margin-top: 10px;
+
+	}
+	body{
+		font-family: Drugs;
+	}
+	.signdir{
+		position: relative;
+		float: left;
+		width: 50%;
+		margin: 0 0;
+		top:150px;
+
+
+	}
+
+	.signesq{
+		position: relative;
+		float: left;
+		width: 50%;
+		margin: 0 0 ;
+		top:150px;
+	}
+
+	.signdir2{
+		position: relative;
+		float: left;
+		width: 70%;
+		margin: 0 0;
+
+	}
+
+	.signesq2{
+		position: relative;
+		float: left;
+		width: 30%;
+		margin: 0 0;
+	}
+
+
+	.signdir3{
+		position: relative;
+		float: left;
+		width: 85%;
+		margin: 0 0;
+
+	}
+
+	.signesq3{
+		position: relative;
+		float: left;
+		width: 15%;
+		margin: 0 0;
+	}
+
+	#email, #password, #confpassword, #FirstName, #LastName{
+		position: relative;
+		width: 220px;
+		height: 27px;
+		background: #FFFFFF;
+		border: 1px solid #000000;
+		box-sizing: border-box;
+		font-family: Drugs;
+		margin: 10px 50px;
+	}
+
+	.text{
+		margin-left: 100px;
+		margin-top: 22px;
+	}
+
+	.text2{
+		margin-top: 22px;
+
+	}
+
+	h1{
+		position: relative;
+		font-size: 40px;
+		left: 20%;
+		top: 150px;
+		color: #000000;
+	}
+
+	#BSignUp{
+		background-color: transparent;
+		border: none;
+		font-size: 22px;
+		font-family: Drugs;
+		margin-top:10px;
+		margin-left: 33%;
+	}
+
+	#BSignUp:hover{
+		color: #65909E;
+
+	}
+
+
+</style>
+<body>
+
+<header>
+	<div class="menu"></div>
+	<nav class="nav">
+		<div class="logobranco"><img src="../resources/logobranco.png" alt="logo" width="70" height="70"/></div>
+	</nav>
+</header>
+
+<h1>Sign Up</h1>
+
+
+<div class="signesq">
+	<div class="signesq2">
+		<p class="text">E-mail:</p>
+		<p class="text"> Password:</p>
+		<p class="text">Password:</p>
+
+	</div>
+	<div class="signdir2">
+
+		<input id="email" type="text">
+		<input id="password" type="password" >
+
+		<input id="confpassword" type="password" placeholder="confirm password">
+	</div>
+</div>
+
+<div class="signdir" >
+
+	<div class="signesq3">
+		<p class="text2">First Name:</p>
+		<p class="text2">Last Name:</p>
+
+	</div>
+
+	<div class="signdir3">
+		<input id="FirstName" type="text">
+		<input id="LastName" type="text" >
+		<br>
 		<button type="button" id="BSignUp" >Sign Up</button>
+	</div>
 
-	</body>
+</div>
+
+</body>
 
 
-	<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
-	<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyArg5CxQa8i555rllPY4TQTQOK8gl7TWb4",
-	    authDomain: "newsfinder-5a095.firebaseapp.com",
-	    databaseURL: "https://newsfinder-5a095.firebaseio.com",
-	    projectId: "newsfinder-5a095",
-	    storageBucket: "newsfinder-5a095.appspot.com",
-	    messagingSenderId: "814840962770"
-	  };
-	  firebase.initializeApp(config);
-	</script>
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyArg5CxQa8i555rllPY4TQTQOK8gl7TWb4",
+        authDomain: "newsfinder-5a095.firebaseapp.com",
+        databaseURL: "https://newsfinder-5a095.firebaseio.com",
+        projectId: "newsfinder-5a095",
+        storageBucket: "newsfinder-5a095.appspot.com",
+        messagingSenderId: "814840962770"
+    };
+    firebase.initializeApp(config);
+</script>
 
-	<script type="text/javascript" src="../javascript/SignUp.js"></script>
+<script type="text/javascript" src="../javascript/SignUp.js"></script>
 </html>

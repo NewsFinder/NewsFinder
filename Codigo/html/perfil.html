@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 
-	<style>
+<link rel="stylesheet" href="../css/style.css">
+<style>
 		.retangulo{
 				position: absolute;
 				z-index: 1;
@@ -20,7 +21,6 @@
 			left: 1029px;
 			top: 26px;
 
-			font-family: Roboto;
 			font-style: normal;
 			font-weight: normal;
 			line-height: normal;
@@ -36,7 +36,6 @@
 			left: 1159px;
 			top: 26px;
 
-			font-family: Roboto;
 			font-style: normal;
 			font-weight: normal;
 			line-height: normal;
@@ -61,7 +60,6 @@
 			left: 306px;
 			top: 159px;
 
-			font-family: Roboto;
 			font-style: normal;
 			font-weight: normal;
 			line-height: normal;
@@ -75,7 +73,6 @@
 			width: 223px;
 			height: 43px;
 
-			font-family: Roboto;
 			font-style: normal;
 			font-weight: normal;
 			line-height: normal;
@@ -89,7 +86,6 @@
 			width: 631px;
 			height: 43px;
 
-			font-family: Roboto;
 			font-style: normal;
 			font-weight: normal;
 			line-height: normal;
@@ -129,9 +125,32 @@
 
 	</style>
 
+
+	<header>
+		<div class="logobranco"><img src="../resources/logobranco.png" alt="logo" width="70" height="70"/></div>
+		<div class="menu">
+
+			<nav class="nav"> <!--APAGAR AQUI O STYLE, FOI PARA TESTAR-->
+				<ul>
+					<li>
+						<a href="../html/feed.html">Feed</a>
+					</li>
+
+					<li>
+						<a href="../html/perfil.html">Profile</a>
+					</li>
+
+					<li>
+						<button id="LogOut">Log Out</button>
+					</li>
+
+				</ul>
+			</nav>
+		</div>
+	</header>
+
 	<body>
 		
-		<div class="retangulo"></div>
 		<div class="foto"><img id="imgF"src=""/></div>
 		<div id="nome" class="nome">NOME: </div>
 		<div id="orcid" class="orcid">ORCID: </div>

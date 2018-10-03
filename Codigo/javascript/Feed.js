@@ -1,6 +1,4 @@
-const api = 	["https://newsapi.org/v2/everything?q=bitcoin&from=2018-08-30&sortBy=publishedAt&apiKey=afaebedbdb1e4e798277fd0b74955296", //Noticias sobre bitcoin no ultimo mes
-				"https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=afaebedbdb1e4e798277fd0b74955296", //Top bussiness Noticas nos US
-				"https://newsapi.org/v2/everything?q=apple&from=2018-09-29&to=2018-09-29&sortBy=popularity&apiKey=afaebedbdb1e4e798277fd0b74955296", //Noticias mencionando Apple no ultimo mes
+const api = 	["https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=afaebedbdb1e4e798277fd0b74955296", //Top bussiness Noticas nos US
 				"https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=afaebedbdb1e4e798277fd0b74955296", //Top noticias de techcrunch
 				"https://newsapi.org/v2/everything?domains=wsj.com&apiKey=afaebedbdb1e4e798277fd0b74955296", //Todas as noticias do jornal wall street
 				"https://newsapi.org/v2/top-headlines?country=us&apiKey=afaebedbdb1e4e798277fd0b74955296",
@@ -9,6 +7,7 @@ const api = 	["https://newsapi.org/v2/everything?q=bitcoin&from=2018-08-30&sortB
 				"https://newsapi.org/v2/top-headlines?q=trump&apiKey=afaebedbdb1e4e798277fd0b74955296",
 				"https://newsapi.org/v2/everything?domains=wsj.com,nytimes.com&apiKey=afaebedbdb1e4e798277fd0b74955296",]; 
 
+//https://newsapi.org/v2/everything?q=bitcoin&from=2018-08-30&sortBy=publishedAt&apiKey=afaebedbdb1e4e798277fd0b74955296"
 
 (function()
 {
@@ -19,18 +18,12 @@ function main(){
 	var next = document.getElementById("Next");
 	var logout = document.getElementById("LogOut");
 	var nome = document.getElementById("Nome");
-	var user = firebase.auth().currentUser;
-
-	if (user != null) {
-	  user.providerData.forEach(function (profile) {
-	    nome.innerHTML = "Nome do Utilizador: "+profile.displayName;
-	  });
-	}
-
-
-	window.addEventListener("beforeunload", function(e){
-		firebase.auth().signOut();
-	}, true);
+	
+	firebase.auth().onAuthStateChanged(firebaseUser => {
+		if(firebaseUser){
+			nome.innerHTML = "USER: "+firebaseUser.displayName.split("|")[0]+" "+firebaseUser.displayName.split("|")[1];
+		}
+	});
 
 	var controlo = 0;
 
@@ -42,7 +35,6 @@ function main(){
 		request.send();
 		request.onload = function() {
 	  		var data = request.response;
-
 
             if(data.status == "ok" && data.totalResults != 0){
 	  			var title = document.getElementById("title");
@@ -79,9 +71,9 @@ function main(){
 	next.addEventListener("click", carregarFeed);
 	logout.addEventListener("click", logingOut);
 
-
 	function logingOut(){
 		firebase.auth().signOut();
 		window.location.href = "../html/index.html";
 	}
+
 }

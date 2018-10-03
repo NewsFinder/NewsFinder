@@ -1,222 +1,3 @@
-<!--<!DOCTYPE html>
-<html>
-	<head>
-	</head>
-
-	<style>
-		
-		.retangulo{
-			position: absolute;
-			z-index: 1;
-			width: 100%;
-			height: 90px;
-			left: 0px;
-			top: 0px;
-			background: #65909E;
-		}
-
-		.logobranco{
-			position: absolute;
-			z-index: 2;
-			width: 93px;
-			height: 77px;
-			left: 24px;
-			top: 9px;
-
-			background: url(../resources/logobranco.png);
-		}
-
-		.textoLogin{
-			position: absolute;
-			width: 267px;
-			height: 137px;
-			left: 182px;
-			top: 204px;
-
-			font-family: Roboto;
-			font-style: normal;
-			font-weight: normal;
-			line-height: normal;
-			font-size: 48px;
-
-			color: #000000;
-		}
-
-		.textoEmail{
-			position: absolute;
-			width: 178px;
-			height: 50px;
-			left: 182px;
-			top: 316px;
-
-			font-family: Roboto;
-			font-style: normal;
-			font-weight: normal;
-			line-height: normal;
-			font-size: 30px;
-
-			color: #000000;
-		}
-
-		.textoPass{	
-			position: absolute;
-			width: 176px;
-			height: 49px;
-			left: 184px;
-			top: 393px;
-
-			font-family: Roboto;
-			font-style: normal;
-			font-weight: normal;
-			line-height: normal;
-			font-size: 30px;
-
-			color: #000000;
-		}
-
-		.emailcaixa{
-			position: absolute;
-			width: 291px;
-			height: 44px;
-			left: 368px;
-			top: 314px;
-
-			background: #FFFFFF;
-			border: 2px solid #000000;
-			box-sizing: border-box;
-		}
-
-		.passcaixa{
-			position: absolute;
-			width: 291px;
-			height: 44px;
-			left: 369px;
-			top: 391px;
-
-			background: #FFFFFF;
-			border: 2px solid #000000;
-			box-sizing: border-box;
-		}
-
-		.btnRecPass{
-			position: absolute;
-			width: 195px;
-			height: 38px;
-			left: 479px;
-			top: 468px;
-
-			font-family: Roboto;
-			font-style: normal;
-			font-weight: normal;
-			line-height: normal;
-			font-size: 24px;
-
-			color: #000000;
-		}
-
-		.btnLogin{
-			position: absolute;
-			width: 195px;
-			height: 38px;
-			left: 270px;
-			top: 468px;
-
-			font-family: Roboto;
-			font-style: normal;
-			font-weight: normal;
-			line-height: normal;
-			font-size: 24px;
-
-			color: #000000;
-		}
-
-	</style>
-
-	<body>
-
-		<div class="retangulo"></div>
-		<div class="logobranco"></div>
-		<div class="textoLogin">LOG IN</div>
-		<div class="textoEmail">E-mail:</div>
-		<div class="textoPass">Password:</div>
-		<input id="email" type="text" class="emailcaixa">
-		<input id="password" type="password" class="passcaixa">
-		<button type="button" id="BLogin" class="btnLogin" >Log In</button>
-		<button type="button" id="BRecPass" class="btnRecPass" >Forgot password</button>
-
-	</body>
-
-
-	<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
-	<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyArg5CxQa8i555rllPY4TQTQOK8gl7TWb4",
-	    authDomain: "newsfinder-5a095.firebaseapp.com",
-	    databaseURL: "https://newsfinder-5a095.firebaseio.com",
-	    projectId: "newsfinder-5a095",
-	    storageBucket: "newsfinder-5a095.appspot.com",
-	    messagingSenderId: "814840962770"
-	  };
-	  firebase.initializeApp(config);
-	</script>
-
-	<script type="text/javascript" src="../javascript/Login.js"></script>
-</html>
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset=“UTF-8”>
-	<title>login</title>
-	<meta name=“viewport” content=“width=device-width,
-		  initial-scale=1">
-	<link rel="stylesheet" href="../css/style.css">
-</head>
-
-<style>
-</style>
-
-<body>
-
-<header>
-	<div class="menu"></div>
-	<nav class="nav">
-		<div class="logobranco"><img src="../resources/logobranco.png" alt="logo" width="70" height="70"/></div>
-	</nav>
-</header>
-<h1>Login</h1>
-
-<span class="email">E-mail:</span>
-<span class="pass">Password:</span>
-
-<input id="email" type="text" class="emailcaixa">
-<input id="password" type="password" class="passcaixa">
-
-<button type="button" id="BLogin" class="btnLogin" >Log In</button>
-<button type="button" id="BuRecPass" class="btnRecPass" >Forgot password</button>
-
-</body>
-
-
-<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
-<script>
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyArg5CxQa8i555rllPY4TQTQOK8gl7TWb4",
-        authDomain: "newsfinder-5a095.firebaseapp.com",
-        databaseURL: "https://newsfinder-5a095.firebaseio.com",
-        projectId: "newsfinder-5a095",
-        storageBucket: "newsfinder-5a095.appspot.com",
-        messagingSenderId: "814840962770"
-    };
-    firebase.initializeApp(config);
-</script>
-
-<script type="text/javascript" src="../javascript/Login.js"></script>-->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -310,14 +91,14 @@
 <input id="email" type="text" class="emailcaixa">
 <input id="password" type="password" class="passcaixa">
 
-<button type="button" id="BLogin" class="btnLogin" >Log In</button>
-<button type="button" id="BRecPass" class="btnRecPass" >Forgot password</button>
+<button type="button" id="BLogin" class="btnLogin" >Login</button>
+<button type="button" id="BRecPass" class="btnRecPass" >Forgot Password</button>
 
 </body>
 
 
 <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
-<script>
+	<script>
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyArg5CxQa8i555rllPY4TQTQOK8gl7TWb4",
@@ -328,6 +109,7 @@
         messagingSenderId: "814840962770"
     };
     firebase.initializeApp(config);
-</script>
+	</script>
 
 <script type="text/javascript" src="../javascript/Login.js"></script>
+</html>

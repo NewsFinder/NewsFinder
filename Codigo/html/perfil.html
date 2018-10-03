@@ -132,20 +132,32 @@
 	<body>
 		
 		<div class="retangulo"></div>
-		<div class="foto"></div>
-		<div class="nome"></div>
-		<div class="orcid">ORCID: </div>
-		<div class="interesses">Interests: </div>
-		<div class="unidade">Research Unit: </div>
-		<div class="filiacao">Affiliation: </div>
+		<div class="foto"><img id="imgF"src=""/></div>
+		<div id="nome" class="nome">NOME: </div>
+		<div id="orcid" class="orcid">ORCID: </div>
+		<div id="interesses" class="interesses">Interests: </div>
+		<div id="unidade" class="unidade">Research Unit: </div>
+		<div id="filiacao" class="filiacao">Affiliation: </div>
 
 
 		<button type="button" id="BFeed" class = "bfeed"><span class="text1">Feed</span></button>
-		<button type="button" id="BProfile" class = "bprofile"><span class="text1">Profile</span></button>
-
-
-		<script type="text/javascript" src="../javascript/perfil.js"></script>
 
 	</body>
+
+	<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+		<script>
+		    // Initialize Firebase
+		    var config = {
+		        apiKey: "AIzaSyArg5CxQa8i555rllPY4TQTQOK8gl7TWb4",
+		        authDomain: "newsfinder-5a095.firebaseapp.com",
+		        databaseURL: "https://newsfinder-5a095.firebaseio.com",
+		        projectId: "newsfinder-5a095",
+		        storageBucket: "newsfinder-5a095.appspot.com",
+		        messagingSenderId: "814840962770"
+		    };
+		    firebase.initializeApp(config);
+		</script>
+
+		<script type="text/javascript" src="../javascript/perfil.js"></script>
 
 </html>

@@ -3,7 +3,7 @@
 }());
 
 function main(){
-
+	firebase.auth().signOut();
 	var txtemail = document.getElementById("email");
 	var btnRecPass= document.getElementById("BRec");
 
@@ -20,16 +20,16 @@ function main(){
 		var email = txtemail.value;   	// verificar que é e-mail real
 
 		if(email.length == 0){
-			alert("O campo e-mail está vazio.");
+			alert("The email field is empty.");
 		}
 		else{
 			var auth = firebase.auth();
 
 			auth.sendPasswordResetEmail(email).then(function() {
-  				alert("Enviamos um e-mail para alteracao da password.");
+  				alert("We sent an email to change the password.");
   				window.location.href = "../html/index.html";
 			}).catch(function(error) {
-				alert("Nao existe um utilizador com o e-mail inserido.");
+				alert("There is no user with this email.");
 			});
 		}
 	}

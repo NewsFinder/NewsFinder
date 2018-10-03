@@ -10,7 +10,12 @@ function main(){
 	var unidade = document.getElementById("unidade");
 	var interesses = document.getElementById("interesses");
 	var nome = document.getElementById("nome");
-	var btn = document.getElementById("BFeed");
+	var logout = document.getElementById("LogOut");
+
+	logout.addEventListener("click", e =>{
+		firebase.auth().signOut();
+		window.location.href = "../html/index.html";
+	});
 	
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if(firebaseUser){
@@ -24,7 +29,6 @@ function main(){
 		}
 	});
 
-	btn.addEventListener("click", e => {
-		window.location.href = "../html/feed.html";
-	});
+	
+	
 }

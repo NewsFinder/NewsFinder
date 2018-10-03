@@ -358,69 +358,125 @@ header ul li a:hover {
     color: #65909E;
 }
 
-/*
+/*/////////////////perfil////////////////////////////////////////*/
 
-.pass{
+ .retangulo{
+     position: absolute;
+     z-index: 1;
+     width: 100%;
+     height: 90px;
+     left: 0px;
+     top: 0px;
+     background: #65909E;
+ }
+
+
+.bfeed{
     position: absolute;
-    left: 20%;
-    top: 332px;
-    font-size: 20px;
-    color: #000000;
-    margin: 0 0;
+    width: 98px;
+    height: 31px;
+    left: 1029px;
+    top: 26px;
 
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 33px;
+
+    color: #FFFFFF;
 }
 
-#email{
-    position: relative;
-    width: 300px;
-    height: 27px;
-    left: 22%;
-    top: 180px;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-}
-
-#password{
-    position: relative;
-    width: 300px;
-    height: 27px;
-    left:0%;
-    top: 230px;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-}
-
-#BLogin{
+.bprofile{
     position: absolute;
-    width: 200px;
-    left: 40%;
-    top: 430px;
-    border: none;
-    background: #FFFFFF;
-    font-family: Drugs;
-    font-size: 22px;
-    color: #000000;
+    width: 105px;
+    height: 31px;
+    left: 1159px;
+    top: 26px;
+
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 33px;
+
+    color: #FFFFFF;
 }
 
-#BLogin:hover{
-    color: #65909E;
-    font-weight: bolder;
-}
-
-#BRecPass{
+#foto1{
     position: absolute;
-    width: 200px;
-    left: 40%;
-    top: 365px;
-    border: none;
-    background: #FFFFFF;
-    font-family: Drugs;
-    font-size: 14px;
+    width: 147px;
+    height: 144px;
+    left: 104px;
+    top: 132px;
+    background: #C4C4C4;
+}
+
+#nome1{
+    position: absolute;
+    width: 590px;
+    height: 70px;
+    left: 306px;
+    top: 159px;
+
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 48px;
+
     color: #000000;
 }
 
-#BRecPass:hover{
-    color: #65909E;
+#orcid1{
+    position: absolute;
+    width: 223px;
+    height: 43px;
+
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 36px;
+
+    color: #000000;
 }
+
+#interesses1{
+    position: absolute;
+    width: 631px;
+    height: 43px;
+
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 36px;
+
+    color: #000000;
+
+}
+
+#unidade1{
+    position: absolute;
+    width: 631px;
+    height: 43px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 36px;
+
+    color: #000000;
+}
+
+#filiacao1{
+    position: absolute;
+    width: 631px;
+    height: 43px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 36px;
+
+    color: #000000;
+}
+

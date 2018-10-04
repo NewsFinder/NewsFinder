@@ -39,7 +39,13 @@ function main(){
 		}
 		else{
 			var confirmation = auth.signInWithEmailAndPassword(email, pass);
-			confirmation.catch(e => alert("There is no user with this email."));
+			confirmation.catch(e => {
+				if(e.code == "auth/wrong-password"){
+					alert("The Password is wrong.");
+				}
+				else
+					alert("There is no user with this email.");
+			});
 		}
 
 	}

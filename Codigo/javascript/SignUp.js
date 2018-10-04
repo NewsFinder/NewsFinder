@@ -79,7 +79,12 @@ function main(){
 			}
 			if(controlo == 0){
 				var confirmation = auth.createUserWithEmailAndPassword(email, pass);
-				confirmation.catch(e => alert("Email format is not valid."));
+				confirmation.catch(e => {
+					if(e.code == "auth/email-already-in-use")
+						alert("A user with this email already exists.");
+					else
+						alert("Email format is not valid.");
+				});
 			}
 			else{
 				alert("Names can not contain special characters.");

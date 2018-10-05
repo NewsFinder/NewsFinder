@@ -35,10 +35,10 @@ function main(){
 
 			var controlo = 0;
 			
-			controlo = verificar(orcid.value, 1);
-			controlo = verificar(filiacao.value, 0);
-			controlo = verificar(unidade.value, 0);
-			controlo = verificar(interesses.value, 0);
+			controlo += verificar(orcid.value, 1);
+			controlo += verificar(filiacao.value, 0);
+			controlo += verificar(unidade.value, 0);
+			controlo += verificar(interesses.value, 0);
 
 			if(controlo==0){
 				var reader = new FileReader();

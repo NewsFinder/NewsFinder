@@ -33,30 +33,56 @@ function main(){
 			alert("Photo must be JPEG or PNG format.");
 		else{
 
-			var controlo = 0;
-			
-			controlo += verificar(orcid.value, 1);
-			controlo += verificar(filiacao.value, 0);
-			controlo += verificar(unidade.value, 0);
-			controlo += verificar(interesses.value, 0);
+			//Buscar utilizador e suas informações
+			var user = firebase.auth().currentUser;
 
-			if(controlo==0){
-				var reader = new FileReader();
-				reader.onloadend = function () {
-					var user = firebase.auth().currentUser;
-					var aux = user.displayName;
-					user.updateProfile({
-		  				displayName: aux+"|"+orcid.value+"|"+filiacao.value+"|"+unidade.value+"|"+interesses.value+"|"//+reader.result
-					}).then(function() {
-						window.location.href="../html/feed.html";
-					}).catch(function(error) {
-		  				console.log(error);
-					});
-	       		}
-	   			if(photo){
-	      			reader.readAsDataURL(photo);
-	    		}
-    		}
+			//Dar storage da foto
+			//Criar referencia do storage
+			var storage = firebase.storage().ref('fotos_perfil/' + valida_nome(user.email));
+			
+			//Upload
+			var task = storage.put(photo);
+
+			task.on('state_changed', 
+
+				function progress(snapshot){
+					console.log((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
+				},
+
+				function error(err){
+					console.log(err);				
+				},
+
+				function complete(){
+
+					//Controlo de segurança de strings
+					var controlo = 0;
+					
+					controlo += verificar(orcid.value, 1);
+					controlo += verificar(filiacao.value, 0);
+					controlo += verificar(unidade.value, 0);
+					controlo += verificar(interesses.value, 0);
+
+					if(controlo==0){
+						var reader = new FileReader();
+						reader.onloadend = function () {
+							var aux = user.displayName;
+							user.updateProfile({
+				  				displayName: aux+"|"+orcid.value+"|"+filiacao.value+"|"+unidade.value+"|"+interesses.value+"|"//+reader.result
+							}).then(function() {
+
+								window.location.href="../html/feed.html";	
+								
+							}).catch(function(error) {
+				  				console.log(error);
+							});
+			       		}
+			   			if(photo){
+			      			reader.readAsDataURL(photo);
+			    		}
+		    		}
+			});
+			
 		}
 	}
 
@@ -86,4 +112,18 @@ function verificar(check, flag){
 	}
 
 	return 0;
+}
+
+function valida_nome(nome){
+
+	//Alteração de '.' -> '!'  e '@' -> '#' para ser aceite no storage
+	var aux;
+
+	aux = nome.replace('@','#');
+
+	for(var i=0 ; i<nome.length; i++)
+		if(nome[i].localeCompare('.')==0)
+			aux = aux.replace('.','!');
+
+	return aux;
 }

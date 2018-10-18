@@ -1,95 +1,208 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>NewsFinder</title>
-<meta name="viewport" content="width=device-width,
-initial-scale=1">
+	<head>
+		<meta charset="UTF-8">
+		<title>NewsFinder - Customize your Profile</title>
+		<meta name="viewport" content="width=device-width,
+		initial-scale=1">
+	</head>
 
-<link rel="stylesheet" href="../css/style.css">
-<style>
-	@font-face { font-family: Drugs; src: url('../resources/fonte/Drugs.otf'); }
-</style>
-</head>
+	<style>
+		
+		@font-face { font-family: Drugs; src: url('../resources/fonte/Drugs.otf'); }
 
+		.logobranco{
+		    margin-left: 30px;
+		    margin-top: 10px;
+		}
 
+		#Top{
+		    position: fixed;
+		    width: 100%;
+		    height: 90px;
+		    left: 0px;
+		    top: 0px;
+		    background: #65909E;
+		}
 
-	<header>
-		<div class="logobranco"><img src="../resources/logobranco.png" alt="logo" width="70" height="70"/></div>
-		<div class="menu">
+		#Container{
+			padding-top: 150px;
+			width: 60%;
+			margin-left: auto;
+			margin-right: auto;
+		}
 
-			<nav class="nav">
-				<ul>
-					<li>
-						<a href="../html/feed.html">Feed</a>
-					</li>
+		#Left{
+			width: 50%;
+			float: left;
+		}
 
-					<li>
-						<a href="../html/perfil.html">Profile</a>
-					</li>
+		#Right{
+			width: 50%;
+			float: left;
+		}
 
-					<li>
-						<button id="LogOut">Log Out</button>
-					</li>
+		#Text{
+			width: 140px;
+			float: left;
+		}
 
-				</ul>
-			</nav>
-		</div>
-	</header>
+		#TextRigth{
+			width: 150px;
+			float: left;
+		}
+
+		#Box{
+			padding-top: 14px;
+			width: 120px;
+			float: left;
+		}
+
+		#Research{
+			clear: both;
+		}
+
+		#Interests{
+			clear: both;
+		}
+
+		#ORCID{
+			clear: both;
+		}
+
+		#Affiliation{
+			clear: both;
+		}
+
+		#Buttons{
+			clear: both;
+		}
+
+		h1{
+			font-family: Drugs;
+			font-size: 40px;
+			color: #000000;
+		}
+
+		h2{
+			font-family: Drugs;
+			font-size: 20px;
+			color: #000000;
+		}
+
+		.caixa{
+			background: #FFFFFF;
+	    	border: 1px solid #000000;
+	    	box-sizing: border-box;
+	    	width: 300px;
+	    	height: 27px;
+		}
+
+		.botao{
+			border-radius: 10px;
+			border-width: 1px;
+			border-color: #65909E;
+		    background: #FFFFFF;
+		    font-family: Drugs;
+		    font-size: 16px;
+		    font-weight: bold;
+		    color: #000000;
+		    outline: none;
+		}
+
+		.botao:hover{
+    		color: #65909E;
+		}
+
+		.botao:active {
+  			background-color: #E6E6E6;
+  		}
+
+  		#ButtonSave{
+  			padding-left: 400px;
+  			float: left;
+  		}
+	
+	</style>
 
 	<body>
-		
-	<h1>Customize your profile </h1>
-
-	<div class="dadosesq">
-		<div class="dadosesq2">
-			<p class="text">Profile Photo </p>
-			<p class="text">ORCID </p>
-			<p class="text">Affiliation </p>
+		<div id="Top" class="menu">
+			<div class="logobranco">
+				<img src="../resources/logobranco.png" alt="logo" width="70" height="70"/>
+			</div>
 		</div>
+		<div id="Container">
+			<div id="Title">
+				<h1>Customize your Profile</h1>
+			</div>
+			<div id="Right">
+				<div id="Photo">
+					<div id="Text">
+						<h2>Profile Photo:</h2>
+					</div>
+					<div id="Box">
+						<input id="foto" type="file" class="caixa">
+					</div>
+				</div>
 
-		<div class="dadosdir2">
+				<div id="ORCID">
+					<div id="Text">
+						<h2>ORCID:</h2>
+					</div>
+					<div id="Box">
+						<input id="orcid" type="text" class="caixa">
+					</div>
+				</div>
 
-			<input id="foto" type="file" class="b_foto">
+				<div id="Affiliation">
+					<div id="Text">
+						<h2>Affiliation:</h2>
+					</div>
+					<div id="Box">
+						<input id="filiacao" type="text" class="caixa">
+					</div>
+				</div>
+			</div>
+			<div id="Left">
+				<div id="Research">
+					<div id="TextRigth">
+						<h2>Research Unit:</h2>
+					</div>
+					<div id="Box">
+						<input id="unidade" type="text" class="caixa">
+					</div>
+				</div>
 
-			<input id="orcid" type="text" class="b_orcid">
+				<div id="Interests">
+					<div id="TextRigth">
+						<h2>Interests:</h2>
+					</div>
+					<div id="Box">
+						<input id="interesses" type="text" class="caixa">
+					</div>
+				</div>
 
-			<input id="filiacao" type="text" class="b_filiacao">
+				<div id="Buttons">
+					<div id="ButtonSave">
+						<button type="button" id="Save" class="botao">Save</button>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-
-	<div class="dadosdir">
-
-		<div class="dadosesq3">
-
-			<p>Research Unit </p>
-			<p>Interests </p>
-		</div>
-
-		<div class="dadosdir3">
-
-			<input id="unidade" type="text" class="b_unidade">
-			<input id="interesses" type="text" class="b_interesses">
-			<br>
-			<button type="button" id="Save" class = "bsave"><span class="text1">Save</span></button>
-
-		</div>
-	</div>
-		<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
-		<script>
-		  // Initialize Firebase
-		  var config = {
+	</body>
+	
+	<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
 		    apiKey: "AIzaSyArg5CxQa8i555rllPY4TQTQOK8gl7TWb4",
 		    authDomain: "newsfinder-5a095.firebaseapp.com",
 		    databaseURL: "https://newsfinder-5a095.firebaseio.com",
 		    projectId: "newsfinder-5a095",
 		    storageBucket: "newsfinder-5a095.appspot.com",
 		    messagingSenderId: "814840962770"
-		  };
-		  firebase.initializeApp(config);
-		</script>
-		<script type="text/javascript" src="../javascript/dados.js"></script>
-
-	</body>
-
+		};
+		firebase.initializeApp(config);
+	</script>
+	<script type="text/javascript" src="../javascript/dados.js"></script>
 </html>

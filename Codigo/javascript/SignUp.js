@@ -7,10 +7,10 @@ const caract = "1234567890`~!@#$%^&*()-_+={[}]|:;'/?.>,<€ "+'"';
 function main(){
 	firebase.auth().signOut();
 	var txtemail = document.getElementById("email");
-	var txtPassword = document.getElementById("password");
-	var txtConfirma = document.getElementById("confpassword");
-	var txtFirstName = document.getElementById("FirstName");
-	var txtLastName = document.getElementById("LastName");
+	var txtPassword = document.getElementById("passwordtxt");
+	var txtConfirma = document.getElementById("confpasswordtxt");
+	var txtFirstName = document.getElementById("FirstNametxt");
+	var txtLastName = document.getElementById("LastNametxt");
 	var btnSignUp = document.getElementById("BSignUp");
 
 	txtemail.onkeypress = function(event){

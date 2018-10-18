@@ -68,7 +68,7 @@ function main(){
 						reader.onloadend = function () {
 							var aux = user.displayName;
 							user.updateProfile({
-				  				displayName: aux+"|"+orcid.value+"|"+filiacao.value+"|"+unidade.value+"|"+interesses.value+"|"//+reader.result
+				  				displayName: aux+"|"+orcid.value+"|"+filiacao.value+"|"+unidade.value+"|"+interesses.value
 							}).then(function() {
 
 								window.location.href="../html/feed.html";	

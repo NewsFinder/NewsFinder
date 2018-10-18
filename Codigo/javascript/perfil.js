@@ -11,10 +11,15 @@ function main(){
 	var interesses = document.getElementById("interesses");
 	var nome = document.getElementById("nome");
 	var logout = document.getElementById("LogOut");
+	var change = document.getElementById("btnChange");
 
 	logout.addEventListener("click", e =>{
 		firebase.auth().signOut();
 		window.location.href = "../html/index.html";
+	});
+
+	change.addEventListener("click", e =>{
+		window.location.href = "../html/changeProfile.html";
 	});
 	
 	firebase.auth().onAuthStateChanged(firebaseUser => {

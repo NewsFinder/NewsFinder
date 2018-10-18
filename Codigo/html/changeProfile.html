@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset=“UTF-8”>
-		<title>NewsFinder - Sign Up</title>
-		<meta name=“viewport” content=“width=device-width,
-			  initial-scale=1">
+		<meta charset="UTF-8">
+		<title>NewsFinder - Customize your Profile</title>
+		<meta name="viewport" content="width=device-width,
+		initial-scale=1">
 	</head>
 
 	<style>
-
+		
 		@font-face { font-family: Drugs; src: url('../resources/fonte/Drugs.otf'); }
 
 		.logobranco{
@@ -43,12 +43,12 @@
 		}
 
 		#Text{
-			width: 120px;
+			width: 140px;
 			float: left;
 		}
 
 		#TextRigth{
-			width: 200px;
+			width: 150px;
 			float: left;
 		}
 
@@ -58,19 +58,19 @@
 			float: left;
 		}
 
-		#ConfPassword{
+		#Research{
 			clear: both;
 		}
 
-		#Password{
+		#Interests{
 			clear: both;
 		}
 
-		#FirstName{
+		#ORCID{
 			clear: both;
 		}
 
-		#LastName{
+		#Affiliation{
 			clear: both;
 		}
 
@@ -118,12 +118,13 @@
   			background-color: #E6E6E6;
   		}
 
-  		#ButtonSign{
-  			padding-left: 425px;
+  		#ButtonSave{
+  			padding-left: 400px;
   			float: left;
   		}
-
+	
 	</style>
+
 	<body>
 		<div id="Top" class="menu">
 			<div class="logobranco">
@@ -132,78 +133,76 @@
 		</div>
 		<div id="Container">
 			<div id="Title">
-				<h1>Sign Up</h1>
+				<h1>Customize your Profile</h1>
 			</div>
 			<div id="Right">
-				<div id="Mail">
+				<div id="Photo">
 					<div id="Text">
-						<h2>E-mail:</h2>
+						<h2>Profile Photo:</h2>
 					</div>
 					<div id="Box">
-						<input id="email" type="text" class="caixa">
+						<input id="foto" type="file" class="caixa">
 					</div>
 				</div>
 
-				<div id="FirstName">
+				<div id="ORCID">
 					<div id="Text">
-						<h2>First Name:</h2>
+						<h2>ORCID:</h2>
 					</div>
 					<div id="Box">
-						<input id="FirstNametxt" type="text" class="caixa">
+						<input id="orcid" type="text" class="caixa">
 					</div>
 				</div>
 
-				<div id="LastName">
+				<div id="Affiliation">
 					<div id="Text">
-						<h2>Last Name:</h2>
+						<h2>Affiliation:</h2>
 					</div>
 					<div id="Box">
-						<input id="LastNametxt" type="text" class="caixa">
+						<input id="filiacao" type="text" class="caixa">
 					</div>
 				</div>
 			</div>
 			<div id="Left">
-				<div id="Password">
+				<div id="Research">
 					<div id="TextRigth">
-						<h2>Password:</h2>
+						<h2>Research Unit:</h2>
 					</div>
 					<div id="Box">
-						<input id="passwordtxt" type="password" class="caixa">
+						<input id="unidade" type="text" class="caixa">
 					</div>
 				</div>
 
-				<div id="ConfPassword">
+				<div id="Interests">
 					<div id="TextRigth">
-						<h2>Confirme Password:</h2>
+						<h2>Interests:</h2>
 					</div>
 					<div id="Box">
-						<input id="confpasswordtxt" type="password" class="caixa">
+						<input id="interesses" type="text" class="caixa">
 					</div>
 				</div>
 
 				<div id="Buttons">
-					<div id="ButtonSign">
-						<button type="button" id="BSignUp" class="botao">Sign Up</button>
+					<div id="ButtonSave">
+						<button type="button" id="Save" class="botao">Save</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</body>
-
-
+	
 	<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
 	<script>
-	    // Initialize Firebase
-	    var config = {
-	        apiKey: "AIzaSyArg5CxQa8i555rllPY4TQTQOK8gl7TWb4",
-	        authDomain: "newsfinder-5a095.firebaseapp.com",
-	        databaseURL: "https://newsfinder-5a095.firebaseio.com",
-	        projectId: "newsfinder-5a095",
-	        storageBucket: "newsfinder-5a095.appspot.com",
-	        messagingSenderId: "814840962770"
-	    };
-	    firebase.initializeApp(config);
+		// Initialize Firebase
+		var config = {
+		    apiKey: "AIzaSyArg5CxQa8i555rllPY4TQTQOK8gl7TWb4",
+		    authDomain: "newsfinder-5a095.firebaseapp.com",
+		    databaseURL: "https://newsfinder-5a095.firebaseio.com",
+		    projectId: "newsfinder-5a095",
+		    storageBucket: "newsfinder-5a095.appspot.com",
+		    messagingSenderId: "814840962770"
+		};
+		firebase.initializeApp(config);
 	</script>
-
-	<script type="text/javascript" src="../javascript/SignUp.js"></script>
+	<script type="text/javascript" src="../javascript/ChangeProfile.js"></script>
 </html>

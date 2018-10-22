@@ -58,29 +58,46 @@ function main(){
 					//Controlo de segurança de strings
 					var controlo = 0;
 					
-					controlo += verificar(orcid.value, 1);
+					window.addEventListener("message" , mensagem);
+
 					controlo += verificar(filiacao.value, 0);
 					controlo += verificar(unidade.value, 0);
 					controlo += verificar(interesses.value, 0);
+					controlo += verificar(orcid.value, 1);
 
 					if(controlo==0){
-						var reader = new FileReader();
-						reader.onloadend = function () {
-							var aux = user.displayName;
-							user.updateProfile({
-				  				displayName: aux+"|"+orcid.value+"|"+filiacao.value+"|"+unidade.value+"|"+interesses.value
-							}).then(function() {
+						var orcidID = transforma_orcid(orcid.value);
+						
+						var check_orcid;
+						checkORCIDProfile(orcidID);
+					}	
+						
+					function mensagem(ev){
+						if(ev.data == "ORCID_1"){
+							controlo+= 1;
+							alert("ORCID number is not valid");
+						}
+						else{
+							var reader = new FileReader();
+							reader.onloadend = function () {
+								var aux = user.displayName;
+								user.updateProfile({
+				  					displayName: aux+"|"+orcid.value+"|"+filiacao.value+"|"+unidade.value+"|"+interesses.value
+								}).then(function() {
 
-								window.location.href="../html/feed.html";	
+									window.location.href="../html/feed.html";	
 								
-							}).catch(function(error) {
-				  				console.log(error);
-							});
-			       		}
-			   			if(photo){
-			      			reader.readAsDataURL(photo);
-			    		}
-		    		}
+								}).catch(function(error) {
+				  					console.log(error);
+								});
+			       			}
+			   				if(photo){
+			      				reader.readAsDataURL(photo);
+			    			}
+						}
+
+					}
+						
 			});
 			
 		}
@@ -126,4 +143,49 @@ function valida_nome(nome){
 			aux = aux.replace('.','!');
 
 	return aux;
+}
+
+function checkORCIDProfile(orcidID) {
+
+    var ORCIDLink = "https://pub.orcid.org/v2.0/" + orcidID + "/works";
+
+
+    fetch(ORCIDLink, {
+        
+        headers: {
+          "Accept": "application/orcid+json"
+        }
+      })
+
+    .then(
+      function(response) {
+        if (response.status !== 200) {
+          console.log('Looks like there was a problem. Status Code: ' +
+            response.status);
+          window.postMessage("ORCID_1" ,'*');
+          return 1;
+        }
+
+        console.log(response.json);
+        // Examine the text in the response
+        response.json().then(teste = function(data) {
+        	window.postMessage("ORCID_0" ,'*');
+        	return 0;
+        })
+    })
+   
+}
+
+function transforma_orcid(orcid){
+	var orcid_format= "";
+	var caract = "-";
+	var final;
+
+	for(var i=0; i<orcid.length; i++){
+		orcid_format += orcid[i];
+		if(((i+1)%4)==0 && i<orcid.length-1)
+			orcid_format += caract;
+	}
+
+	return orcid_format;
 }

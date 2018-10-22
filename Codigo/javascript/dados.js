@@ -14,33 +14,6 @@ function main(){
 	var unidade = document.getElementById("unidade");
 	var interesses = document.getElementById("interesses");
 	var bsave = document.getElementById("Save");
-	var textbox = document.getElementById("Info");
-	var bAdd = document.getElementById("Add");
-
-	var array = [];
-
-	bAdd.addEventListener("click", baddPressed);
-
-	function baddPressed(){
-		if(interesses.value.length == 0)
-			alert("The Interests field is empty.");
-		else{
-			var controlo = 0;
-			controlo += verificar(interesses.value, 0);
-			if(controlo==0){
-				if(array.indexOf(interesses.value) != -1){
-					alert("This Interests is already added.");
-				}
-				else{
-					array.push(interesses.value);
-					if(array.length == 1)
-						textbox.innerHTML += interesses.value;
-					else
-						textbox.innerHTML += ", "+interesses.value;
-				}
-			}
-		}
-	}
 
 	bsave.addEventListener("click", bsavePressed);
 
@@ -54,7 +27,7 @@ function main(){
 			alert("The Affiliation field is empty.");
 		else if(unidade.value.length == 0)
 			alert("The Research Unit field is empty.");
-		else if(array.length == 0)
+		else if(interesses.value.length == 0)
 			alert("The Interests field is empty.");
 		else if(!photo.name.includes(".jpg") && !photo.name.includes(".png") && !photo.name.includes(".jpeg"))
 			alert("Photo must be JPEG or PNG format.");
@@ -88,22 +61,14 @@ function main(){
 					controlo += verificar(orcid.value, 1);
 					controlo += verificar(filiacao.value, 0);
 					controlo += verificar(unidade.value, 0);
+					controlo += verificar(interesses.value, 0);
 
 					if(controlo==0){
-						var aux2;
-						for(let i=0; i<array.length; i++){
-							if(i==0){
-								aux2 = array[0];
-							}
-							else{
-								aux2 += ","+array[i];
-							}
-						}
 						var reader = new FileReader();
 						reader.onloadend = function () {
 							var aux = user.displayName;
 							user.updateProfile({
-				  				displayName: aux+"|"+orcid.value+"|"+filiacao.value+"|"+unidade.value+"|"+aux2+"|"
+				  				displayName: aux+"|"+orcid.value+"|"+filiacao.value+"|"+unidade.value+"|"+interesses.value
 							}).then(function() {
 
 								window.location.href="../html/feed.html";	

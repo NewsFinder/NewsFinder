@@ -89,28 +89,6 @@ function main(){
 
 					controlo += verificar(filiacao.value, 0);
 					controlo += verificar(unidade.value, 0);
-<<<<<<< .merge_file_a12504
-
-					if(controlo==0){
-						var aux2;
-						for(let i=0; i<array.length; i++){
-							if(i==0){
-								aux2 = array[0];
-							}
-							else{
-								aux2 += ","+array[i];
-							}
-						}
-						var reader = new FileReader();
-						reader.onloadend = function () {
-							var aux = user.displayName;
-							user.updateProfile({
-				  				displayName: aux+"|"+orcid.value+"|"+filiacao.value+"|"+unidade.value+"|"+aux2+"|"
-							}).then(function() {
-
-								window.location.href="../html/feed.html";	
-=======
-					controlo += verificar(interesses.value, 0);
 					controlo += verificar(orcid.value, 1);
 
 					if(controlo==0){
@@ -126,15 +104,23 @@ function main(){
 							alert("ORCID number is not valid");
 						}
 						else{
+							var aux2;
+							for(let i=0; i<array.length; i++){
+								if(i==0){
+									aux2 = array[0];
+								}
+								else{
+									aux2 += ","+array[i];
+								}
+							}
 							var reader = new FileReader();
 							reader.onloadend = function () {
 								var aux = user.displayName;
 								user.updateProfile({
-				  					displayName: aux+"|"+orcid.value+"|"+filiacao.value+"|"+unidade.value+"|"+interesses.value
+				  					displayName: aux+"|"+orcid.value+"|"+filiacao.value+"|"+unidade.value+"|"+aux2+"|"
 								}).then(function() {
 
 									window.location.href="../html/feed.html";	
->>>>>>> .merge_file_a05352
 								
 								}).catch(function(error) {
 				  					console.log(error);

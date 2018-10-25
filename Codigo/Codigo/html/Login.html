@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=“UTF-8”>
+		<title>NewsFinder - Login</title>
+		<meta name=“viewport” content=“width=device-width,
+			  initial-scale=1">
+	</head>
+
+	<style>
+
+	    @font-face { font-family: Drugs; src: url('../resources/fonte/Drugs.otf'); }
+
+		.logobranco{
+		    margin-left: 30px;
+		    margin-top: 10px;
+		}
+
+		#Top{
+		    position: fixed;
+		    width: 100%;
+		    height: 90px;
+		    left: 0px;
+		    top: 0px;
+		    background: #65909E;
+		}
+
+		#Container{
+			padding-top: 150px;
+			width: 60%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		#Text{
+			width: 120px;
+			float: left;
+		}
+
+		#Box{
+			padding-top: 14px;
+			width: 120px;
+			float: left;
+		}
+
+		#Password{
+			clear: both;
+		}
+
+		#Buttons{
+			clear: both;
+		}
+
+		h1{
+			font-family: Drugs;
+			font-size: 40px;
+			color: #000000;
+		}
+
+		h2{
+			font-family: Drugs;
+			font-size: 20px;
+			color: #000000;
+		}
+
+		.caixa{
+			background: #FFFFFF;
+	    	border: 1px solid #000000;
+	    	box-sizing: border-box;
+	    	width: 300px;
+	    	height: 27px;
+		}
+
+		.botao{
+			border-radius: 10px;
+			border-width: 1px;
+			border-color: #65909E;
+		    background: #FFFFFF;
+		    font-family: Drugs;
+		    font-size: 16px;
+		    font-weight: bold;
+		    color: #000000;
+		    outline: none;
+		}
+
+		.botao:hover{
+    		color: #65909E;
+		}
+
+		.botao:active {
+  			background-color: #E6E6E6;
+  		}
+
+  		#ButtonLog{
+  			padding-right: 100px;
+  			float: left;
+  		}
+
+  		#ButtonForget{
+  			float: left;
+  		}
+
+	</style>
+
+	<body>
+
+		<div id="Top" class="menu">
+			<div class="logobranco">
+				<img src="../resources/logobranco.png" alt="logo" width="70" height="70"/>
+			</div>
+		</div>
+
+		<div id="Container">
+			<div id="Title">
+				<h1>Login</h1>
+			</div>
+
+			<div id="Mail">
+				<div id="Text">
+					<h2>E-mail:</h2>
+				</div>
+				<div id="Box">
+					<input id="email" type="text" class="caixa">
+				</div>
+			</div>
+
+			<div id="Password">
+				<div id="Text">
+					<h2>Password:</h2>
+				</div>
+				<div id="Box">
+					<input id="password" type="password" class="caixa">
+				</div>
+			</div>
+
+			<div id="Buttons">
+				<div id="Text">
+					<h2></h2>
+				</div>
+				<div id="ButtonLog">
+					<button type="button" id="BLogin" class="botao">Log In</button>
+				</div>
+				<div id="ButtonForget">
+					<button type="button" id="BRecPass" class="botao">Forgot password</button>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+
+	<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+	<script>
+	    // Initialize Firebase
+	    var config = {
+	        apiKey: "AIzaSyArg5CxQa8i555rllPY4TQTQOK8gl7TWb4",
+	        authDomain: "newsfinder-5a095.firebaseapp.com",
+	        databaseURL: "https://newsfinder-5a095.firebaseio.com",
+	        projectId: "newsfinder-5a095",
+	        storageBucket: "newsfinder-5a095.appspot.com",
+	        messagingSenderId: "814840962770"
+	    };
+	    firebase.initializeApp(config);
+	</script>
+
+	<script type="text/javascript" src="../javascript/Login.js"></script>
+</html>

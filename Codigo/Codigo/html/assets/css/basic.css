@@ -21,7 +21,10 @@ body {
 #title{
     font-size: 30px;
 }
-
+#logOut{
+    background-color: transparent;
+    border: none;
+}
 
 #wrapper {
     width: 100%;

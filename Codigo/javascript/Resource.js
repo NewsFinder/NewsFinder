@@ -8,7 +8,7 @@ function main(){
 	var add = document.getElementById("Add");
 	var description = document.getElementById("description");
 	var link = document.getElementById("link");
-	texto.innerHTML = "Description: Center for Informatics and Systems of the Univesity of Coimbra\nLink: https://cisuc.uc.pt/\n\nDescription: DEI - Department of Computer Science - FCTUC\nLink: www.uc.pt/fctuc/dei\n";
+	texto.innerHTML = "Description: Center for Informatics and Systems of the Univesity of Coimbra\nLink: https://cisuc.uc.pt/\n\nDescription: DEI - Department of Computer Science - FCTUC\nLink: www.uc.pt/fctuc/dei\n\n";
 
 	var aux = "";
 	var array = [];

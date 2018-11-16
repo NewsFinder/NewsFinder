@@ -7347,6 +7347,7 @@ var num;
 
 function main(){
 	const snoowrap = require('snoowrap');
+	
 
 	const r = new snoowrap({
 	  userAgent: 'NewsFinder',
@@ -7387,15 +7388,28 @@ function apresentaReddit(interesses, r){
 	//falta um limitador no NUM, falta interesses, controlo se interesse existe mesmo || Tem de ser tudo junto
 	var title = document.getElementById("title");
 	var link = document.getElementById("link");
+	var array_interesses;
+	var interesse_random;
 
-	r.getHot().map(post => post).then(show);
+
+	array_interesses = check_interesses(interesses);
+	interesse_random = array_interesses[Math.floor(Math.random()*array_interesses.length)];
+	r.getHot(interesse_random).map(post => post).then(show);
 	
 	function show(array){
 		title.innerHTML = "Reddit: "+(array[num].title);
-		var referencia = 'www.reddit.com'+array[num].permalink
-		link.setAttribute('href', referencia);
+		var referencia = 'https://www.reddit.com'+array[num].permalink
+		link.setAttribute("href", referencia);
 		num++;
 	}
+}
+
+function check_interesses(interesses){
+	var aux;
+	
+	aux = interesses.split(",");
+
+	return aux;
 }
 },{"snoowrap":322}],37:[function(require,module,exports){
 (function (process,global,setImmediate){

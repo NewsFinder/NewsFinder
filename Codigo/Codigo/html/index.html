@@ -3,79 +3,89 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>NewsFinder</title>
-		<meta name=“viewport” content=“width=device-width,
+		<meta name="viewport" content="width=device-width,
 			  initial-scale=1">
+
 	</head>
 
-<style>
-	@font-face { font-family: Drugs; src: url('../resources/fonte/Drugs.otf'); }
-	#logoinicial{
-		position: relative;
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		width: 500px;
-		top: 70px;
-	}
+    <!-- ************************************************************ -->
 
-	.vl{
-		width:4px;
-		float: left;
-		background-color:#000;
-		position:absolute;
-		top:430px;
-		height: 100px;
-		left:50%;
-		z-index: 1;
-	}
+    <style>
+        /* aqui CSS code appliance for the background color - P.M. */
+        body {background-color: 	#65909E;}
+        @font-face { font-family: Drugs; src: url('../resources/fonte/Drugs.otf'); }
+        #logoinicial{
+            position: relative;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 500px;
+            top: 70px;
+        }
+
+        .vl{
+            width:4px;
+            float: left;
+            background-color:#000;
+            position:absolute;
+            top:430px;
+            height: 100px;
+            left:50%;
+            z-index: 1;
+        }
 
 
-	.blogin{
-		float: left;
-		position: relative;
-		top: 150px;
-		left: 30%;
-		background-color: white;
-		border: none;
-	}
+        .blogin{
+            float: left;
+            position: relative;
+            top: 150px;
+            left: 30%;
+            background-color: white;
+            border: none;
+        }
 
-	.bsign{
-		float: right;
-		position: relative;
-		right: 30%;
-		top: 150px;
-		background-color: white;
-		border: none;
-	}
+        .bsign{
+            float: right;
+            position: relative;
+            right: 30%;
+            top: 150px;
+            background-color: white;
+            border: none;
+        }
 
-	.text1{
-		width: 192px;
-		height: 36px;
-		font-size: 30px;
-		font-family: Drugs;
-		font-weight: bold;
-	}
+        .text1{
+            width: 192px;
+            height: 36px;
+            font-size: 30px;
+            font-family: Drugs;
+            font-weight: bold;
+        }
 
-	.blogin:hover{
-		color: #65909E;
-	}
+        .blogin:hover{
+            color: black;
+        }
 
-	.bsign:hover{
-		color: #65909E;
-	}
-</style>
+        .bsign:hover{
+            color: black;
+        }
+    </style>
+
+    <!-- ************************************************************ -->
 
 	<body>
-		<img id="logoinicial" src="../resources/newsFinderLogo.png" alt="NewsFinderLogo" >
+		<img id="logoinicial" src="../resources/logo_branco_new.png" alt="NewsFinderLogo" >
 		<div>
-			<button type="button" id="BLogin"  class = "blogin"><span class="text1">Login</span></button>
+			<button type="button" id="BLogin"  class="blogin"><span class="text1">Login</span></button>
 
 			<div class="vl"></div>
 
-			<button type="button" id="BSignUp"  class = "bsign"><span class="text1">Sign Up</span></button>
+			<button type="button" id="BSignUp"  class="bsign"><span class="text1">Sign Up</span></button>
 		</div>
 	</body>
 
+
+    <!-- ************************************************************
+    ***********************NewsFinder******************************** -->
 	<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
 	<script>
     // Initialize Firebase
@@ -91,4 +101,16 @@
 	</script>
 
 	<script type="text/javascript" src="../javascript/Start.js"></script>
+
+
+
+
+    <!-- ************************************************************ -->
+
+	<head>
+        <link rel="stylesheet" type="text/css" href="../css/index_land_page_style.css">
+    </head>
+    <!-- ************************************************************ -->
+
+
 </html>

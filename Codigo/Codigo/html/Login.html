@@ -1,167 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+	<meta charset=“UTF-8”>
+	<title>NewsFinder - Login</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css1">
 	<head>
-		<meta charset=“UTF-8”>
-		<title>NewsFinder - Login</title>
-		<meta name=“viewport” content=“width=device-width,
-			  initial-scale=1">
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<title>Login Screen with Form - NewsFinder</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style type="text/css">
+			@font-face{font-family: Drugs; src: url("../resources/fonte/Drugs.otf")}
+			.login-block{
+				background: #65909E;
+				background: -webkit-linear-gradient(to bottom, #65909E, #65909E);
+				background: linear-gradient(to bottom, #65909E, #65909E);
+				float:left;
+				width:100%;
+				padding : 50px 0;
+			}
+			.banner-sec{background:url(https://static.pexels.com/photos/33972/pexels-photo.jpg)  no-repeat left bottom; background-size:cover; min-height:500px; border-radius: 0 10px 10px 0; padding:0;}
+			.container{background:#fff; border-radius: 10px; box-shadow:0px 0px 0px rgba(0,0,0,0.1);}
+			.login-sec{padding: 50px 30px; position:relative;}
+			.login-sec .copy-text{position:absolute; width:80%; bottom:20px; font-size:13px; text-align:center;}
+			.login-sec h2{margin-bottom:30px; font-weight:800; font-size:30px; color: #65909E;}
+			.login-sec h2:after{content:" "; width:100px; height:5px; background:#65909E; display:block; margin-top:20px; border-radius:3px; margin-left:auto;margin-right:auto}
+			.btn-login{background: #65909E; color:#fff; font-weight:600;}
+			.banner-text{width:70%; position:absolute; bottom:40px; padding-left:20px;}
+			.banner-text h2{color:#fff; font-weight:600;}
+			.banner-text h2:after{content:" "; width:100px; height:5px; background:#FFF; display:block; margin-top:20px; border-radius:3px;}
+			.banner-text p{color:#fff;}
+			.caixa{
+				background: #FFFFFF;
+				border: 1px solid #000000;
+				box-sizing: border-box;
+				width: 220px;
+				height: 27px;
+			}
+
+			.botao{
+				margin-top: 20px;
+				border-radius: 10px;
+				border-width: 0px;
+				border-color: #65909E;
+				background: #65909E;
+				font-family: Drugs;
+				font-size: 16px;
+				font-weight: bold;
+				color: white;
+				outline: none;
+			}
+			.botao:hover{
+				color: black;
+			}
+		</style>
 	</head>
+</head>
 
-	<style>
+<!-- ************************************************************ -->
 
-	    @font-face { font-family: Drugs; src: url('../resources/fonte/Drugs.otf'); }
+<body>
+	<section class="login-block">
+		<div class="container">
 
-		.logobranco{
-		    margin-left: 30px;
-		    margin-top: 10px;
-		}
+			<div class="row">	<!-- separação entre login e a imagem -->
+				<div class="col-md-4 login-sec">	<!-- separação entre titulos  -->
+					<h2 class="text-center">Login Now</h2>
+					<form class="login-form">
+						<div id="Username1">
+							<div id="Text1">
+								<h1>USERNAME:</h1>
+							</div>
+							<div id="Box1">
+								<input id="email" type="text" class="caixa" placeholder="username">
+							</div>
+						</div>
+						<div id="Password1">
+							<div id="Text">
+								<h1>PASSWORD:</h1>
+							</div>
+							<div id="Box">
+								<input id="password" type="password" class="caixa" placeholder="password">
+							</div>
+						</div>
+						<div id="Buttons">
+							<div id="ButtonLog">
+								<button type="button" id="BRecPass" class="botao">Forgot password?</button>
+								<button type="button" id="BLogin" class="botao"  style="margin-left: 30px;">Enter</button>
+							</div>
+						</div>
+					</form>
+				</div>
 
-		#Top{
-		    position: fixed;
-		    width: 100%;
-		    height: 90px;
-		    left: 0px;
-		    top: 0px;
-		    background: #65909E;
-		}
-
-		#Container{
-			padding-top: 150px;
-			width: 60%;
-			margin-left: auto;
-			margin-right: auto;
-		}
-
-		#Text{
-			width: 120px;
-			float: left;
-		}
-
-		#Box{
-			padding-top: 14px;
-			width: 120px;
-			float: left;
-		}
-
-		#Password{
-			clear: both;
-		}
-
-		#Buttons{
-			clear: both;
-		}
-
-		h1{
-			font-family: Drugs;
-			font-size: 40px;
-			color: #000000;
-		}
-
-		h2{
-			font-family: Drugs;
-			font-size: 20px;
-			color: #000000;
-		}
-
-		.caixa{
-			background: #FFFFFF;
-	    	border: 1px solid #000000;
-	    	box-sizing: border-box;
-	    	width: 300px;
-	    	height: 27px;
-		}
-
-		.botao{
-			border-radius: 10px;
-			border-width: 1px;
-			border-color: #65909E;
-		    background: #FFFFFF;
-		    font-family: Drugs;
-		    font-size: 16px;
-		    font-weight: bold;
-		    color: #000000;
-		    outline: none;
-		}
-
-		.botao:hover{
-    		color: #65909E;
-		}
-
-		.botao:active {
-  			background-color: #E6E6E6;
-  		}
-
-  		#ButtonLog{
-  			padding-right: 100px;
-  			float: left;
-  		}
-
-  		#ButtonForget{
-  			float: left;
-  		}
-
-	</style>
-
-	<body>
-
-		<div id="Top" class="menu">
-			<div class="logobranco">
-				<img src="../resources/logobranco.png" alt="logo" width="70" height="70"/>
+				<div class="col-md-8 banner-sec">
+					<img class="d-block img-fluid" src="../resources/login_im.jpg" alt="First slide">
+					<div class="carousel-caption d-none d-md-block">
+						<div style="text-align: center;">
+							<h2>NewsFinder</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi</p>
+						</div>
+					</div>
+				</div>
 			</div>
+
 		</div>
+	</section>
+</body>
 
-		<div id="Container">
-			<div id="Title">
-				<h1>Login</h1>
-			</div>
+<!-- ************************************************************ -->
 
-			<div id="Mail">
-				<div id="Text">
-					<h2>E-mail:</h2>
-				</div>
-				<div id="Box">
-					<input id="email" type="text" class="caixa">
-				</div>
-			</div>
+<!-- ************************************************************
+***********************NewsFinder******************************** -->
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyArg5CxQa8i555rllPY4TQTQOK8gl7TWb4",
+        authDomain: "newsfinder-5a095.firebaseapp.com",
+        databaseURL: "https://newsfinder-5a095.firebaseio.com",
+        projectId: "newsfinder-5a095",
+        storageBucket: "newsfinder-5a095.appspot.com",
+        messagingSenderId: "814840962770"
+    };
+    firebase.initializeApp(config);
+</script>
 
-			<div id="Password">
-				<div id="Text">
-					<h2>Password:</h2>
-				</div>
-				<div id="Box">
-					<input id="password" type="password" class="caixa">
-				</div>
-			</div>
+<script type="text/javascript" src="../javascript/Login.js"></script>
+<!-- ************************************************************ -->
 
-			<div id="Buttons">
-				<div id="Text">
-					<h2></h2>
-				</div>
-				<div id="ButtonLog">
-					<button type="button" id="BLogin" class="botao">Log In</button>
-				</div>
-				<div id="ButtonForget">
-					<button type="button" id="BRecPass" class="botao">Forgot password</button>
-				</div>
-			</div>
-		</div>
+<!-- ************************************************************ -->
+<head>
+	<link rel="stylesheet" type="text/css" href="../css/Login_page_style.css">
+</head>
+<!-- ************************************************************ -->
 
-	</body>
-
-
-	<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
-	<script>
-	    // Initialize Firebase
-	    var config = {
-	        apiKey: "AIzaSyArg5CxQa8i555rllPY4TQTQOK8gl7TWb4",
-	        authDomain: "newsfinder-5a095.firebaseapp.com",
-	        databaseURL: "https://newsfinder-5a095.firebaseio.com",
-	        projectId: "newsfinder-5a095",
-	        storageBucket: "newsfinder-5a095.appspot.com",
-	        messagingSenderId: "814840962770"
-	    };
-	    firebase.initializeApp(config);
-	</script>
-
-	<script type="text/javascript" src="../javascript/Login.js"></script>
 </html>

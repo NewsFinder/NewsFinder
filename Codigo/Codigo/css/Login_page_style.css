@@ -1,0 +1,39 @@
+/*#######################################################################*/
+/*#######################################################################*/
+
+/* At the end of each HTML code file the following three lines of code should be implemented, in this way, the HTML code
+ will be loaded and only after the CSS code will be applied.*/
+/* ######################################################### */
+/*
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+*/
+/* ######################################################### */
+
+/* PM CSS coding */
+        /* 1) Brief description */
+        /* 2) new CSS code */
+
+/* Mockup 2  -  login_2.0*/
+    /* Modifications over the new Login.html page code */
+    /* Login title color; */
+    .login-sec h2 {
+        color: #65909E;
+    }
+    /* Separation bar after Login title; */
+    .login-sec h2:after {
+        background: #65909E;
+    }
+    /* change size of "USERNAME" and "PASSWORD" title; */
+    .h1, h1 {
+        font-size: 1.0rem;
+    }
+    /* input boxes with round borders */
+    input{
+        border-radius: 7px;
+    }
+    /* button round borders */
+    button {
+        border-radius: 5px;
+    }

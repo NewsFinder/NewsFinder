@@ -21,6 +21,7 @@ initial-scale=1">
 		<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
 		<script type="text/javascript" src="../javascript/Feed.js"></script>
 
+
 </head>
 
 
@@ -53,7 +54,7 @@ initial-scale=1">
 
 
                     <li>
-                        <a  href="../html/feed.html"><i ></i>Feed<span class="fa arrow"></span></a>
+                        <a  href="../html/feed.html"><i ></i>Feed</a>
                         
                     </li>
                     <li>
@@ -77,17 +78,73 @@ initial-scale=1">
                     <div class="col-md-12">
                         <div class="noticia">
                             <h1>Resources</h1>
-	
-	</div>
-	
+                        </div>
+                        <div class="botao">
+                        <div class="container">
+
+                            <!-- Trigger the modal with a button -->
+                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">ADD RESOURCE</button>
+
+                            <!-- Modal -->
+                            <div class="modal" id="myModal" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Add Resource</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="form-modal">
+                                                <div class="dn">
+                                                Description: <input type="text" name="descricao" class="modal-field"></div>
+                                                <div class="dn">
+                                                    Link: <input type="url" name="link" class="modal-field"><br></div>
+                                                <div class="dn">
+                                                    Add tag: <select class="modal-field2">
+                                                <option value="tag 1">tag 1</option>
+                                                <option value="tag 1">tag 1</option>
+                                                <option value="tag 1">tag 1</option>
+                                                <option value="tag 1">tag 1</option>
+                                            </select>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="container">
+                            <div class="barra">
+                            <!-- Trigger the modal with a button -->
+                            <button type="button" class="btn2 btn-info2 btn-lg2" data-toggle="modal" data-target="#myModal">REMOVE RESOURCE</button>
+                            </div>
+
+
+
+                        </div>
+                        </div>
+
+                        <div class= "containR">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+
                     </div>
                 </div>
 
-            </div>
+
             <!-- /. PAGE INNER  -->
-        </div>
+
         <!-- /. PAGE WRAPPER  -->
     </div>
+</div>
     <!-- /. WRAPPER  -->
     <!-- /. FOOTER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
@@ -112,7 +169,12 @@ initial-scale=1">
 		        messagingSenderId: "814840962770"
 		    };
 		    firebase.initializeApp(config);
+            
+            // When the user clicks on <div>, open the popup
+function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
 		</script>
 
 		<script type="text/javascript" src="../javascript/perfil.js"></script>
-

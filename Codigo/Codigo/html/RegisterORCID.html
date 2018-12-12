@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=“UTF-8”>
+    <title>NewsFinder - Register ORCID</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css1">
+    <head>
+        <meta charset="utf-8">
+        <meta name="robots" content="noindex, nofollow">
+        <title>Register ORCID Screen with Form - NewsFinder</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css">
+            @font-face{font-family: Drugs; src: url("../resources/fonte/Drugs.otf")}
+            .registerORCID-block{
+                background: #65909E;
+                background: -webkit-linear-gradient(to bottom, #65909E, #65909E);
+                background: linear-gradient(to bottom, #65909E, #65909E);
+                float:left;
+                width:100%;
+                padding : 50px 0;
+            }
+            .banner-sec{background:url(https://static.pexels.com/photos/33972/pexels-photo.jpg)  no-repeat left bottom; background-size:cover; min-height:500px; border-radius: 0 10px 10px 0; padding:0;}
+            .container{background:#fff; border-radius: 10px; box-shadow:0px 0px 0px rgba(0,0,0,0.1);}
+            .registerORCID-sec{padding: 50px 30px; position:relative;}
+            .registerORCID-sec .copy-text{position:absolute; width:80%; bottom:20px; font-size:13px; text-align:center;}
+            .registerORCID-sec h2{margin-bottom:30px; font-weight:800; font-size:30px; color: #65909E;}
+            .registerORCID-sec h2:after{content:" "; width:100px; height:5px; background:#65909E; display:block; margin-top:20px; border-radius:3px; margin-left:auto;margin-right:auto}
+            .banner-text h2{color:#fff; font-weight:600;}
+            .banner-text h2:after{content:" "; width:100px; height:5px; background:#FFF; display:block; margin-top:20px; border-radius:3px;}
+            .banner-text p{color:#fff;}
+            .caixa{
+                background: #FFFFFF;
+                border: 1px solid #000000;
+                box-sizing: border-box;
+                width: 220px;
+                height: 27px;
+            }
+
+            .botao{
+                margin-top: 20px;
+                border-radius: 10px;
+                border-width: 0px;
+                border-color: #65909E;
+                background: #65909E;
+                font-family: Drugs;
+                font-size: 16px;
+                font-weight: bold;
+                color: white;
+                outline: none;
+            }
+            .botao:hover{
+                color: black;
+            }
+        </style>
+    </head>
+</head>
+
+<!-- ************************************************************ -->
+
+<body>
+<section class="registerORCID-block">
+    <div class="container">
+
+        <div class="row">	<!-- separação entre login e a imagem -->
+            <div class="col-md-4 registerORCID-sec">	<!-- separação entre titulos  -->
+                <h2 class="text-center">Register</h2>
+                <form class="registerORCID-form">
+
+                    <div style="text-align: center;">
+                        <p align="left">To access this platform you need to have an ORCID ID.
+                            You will be redirected to the ORCID website to login with your credentials.</p>
+                    </div>
+
+                    <div id="Buttons">
+                        <div id="ButtonLog" style="margin-top: 50px;">
+                            <button type="button" id="BRegisterORCID" class="botao"  style="margin-left: 30px;">SEND ME TO THE ORCID WEBSITE</button>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+
+            <div class="col-md-8 banner-sec">
+                <img class="d-block img-fluid" src="../resources/regist_ORCID.jpg" alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <div style="text-align: center;">
+                        <h2>NewsFinder</h2>
+                        <p align="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+</body>
+
+<!-- *******************************same on same on***************************** -->
+<!-- ************************************************************
+***********************NewsFinder******************************** -->
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyArg5CxQa8i555rllPY4TQTQOK8gl7TWb4",
+        authDomain: "newsfinder-5a095.firebaseapp.com",
+        databaseURL: "https://newsfinder-5a095.firebaseio.com",
+        projectId: "newsfinder-5a095",
+        storageBucket: "newsfinder-5a095.appspot.com",
+        messagingSenderId: "814840962770"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script type="text/javascript" src="../javascript/RegisterORCID.js"></script>
+<!-- ************************************************************ -->
+
+<!-- ************************************************************ -->
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/Login_page_style.css">
+</head>
+<!-- ************************************************************ -->
+
+</html>

@@ -2737,7 +2737,10 @@ select[multiple].input-lg {
           user-select: none;
   background-image: none;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 14px;
+  horiz-align: center;
+  margin-left: -200px;
+
 }
 .btn:focus,
 .btn:active:focus,
@@ -2769,8 +2772,8 @@ fieldset[disabled] .btn {
   opacity: .65;
 }
 .btn-default {
-  color: #333;
-  background-color: #fff;
+  color: white;
+  background-color: #66909E;
   border-color: #ccc;
 }
 .btn-default:hover,
@@ -2892,18 +2895,18 @@ fieldset[disabled] .btn-success.active {
   background-color: #fff;
 }
 .btn-info {
-  color: #fff;
-  background-color: #5bc0de;
-  border-color: #46b8da;
+
+  background-color: transparent;
+
 }
 .btn-info:hover,
 .btn-info:focus,
 .btn-info:active,
 .btn-info.active,
 .open > .dropdown-toggle.btn-info {
-  color: #fff;
-  background-color: #31b0d5;
-  border-color: #269abc;
+  color: #66909E;
+  background-color: transparent;
+
 }
 .btn-info:active,
 .btn-info.active,
@@ -5442,6 +5445,8 @@ button.close {
   min-height: 16.42857143px;
   padding: 15px;
   border-bottom: 1px solid #e5e5e5;
+  background-color: #66909E;
+  color:white;
 }
 .modal-header .close {
   margin-top: -2px;

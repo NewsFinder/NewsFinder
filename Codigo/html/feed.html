@@ -4,14 +4,44 @@
 
 <style>
 	@font-face { font-family: Drugs; src: url('../resources/fonte/Drugs.otf'); }
+
+    #infinite-list {
+      /* We need to limit the height and show a scrollbar */
+      width: auto;
+      height: 400px;
+      overflow: auto;
+
+      /* Optional, only to check that it works with margin/padding */
+      margin: 30px;
+      padding: 20px;
+      border: 1px solid black;
+    }
+
+    /* Optional eye candy below: */
+    .scroll {
+      padding: 10px;
+      list-style-type: none;
+    }
+
+ 
 </style>
 	<head>
 		<meta charset="UTF-8">
 		<title>NewsFinder</title>
 		<meta name="viewport" content="width=device-width,
 initial-scale=1">
-		<link rel="stylesheet" href="../css/style.css">
+		<!-- BOOTSTRAP STYLES-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!--CUSTOM BASIC STYLES-->
+    <link href="assets/css/basic.css" rel="stylesheet" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 		<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+		<script type="text/javascript" src="../javascript/bundle.js"></script>
 
 		<script>
 		  // Initialize Firebase
@@ -25,41 +55,55 @@ initial-scale=1">
 		  };
 		  firebase.initializeApp(config);
 		</script>
-		<script type="text/javascript" src="../javascript/bundle.js"></script>
 			
 	</head>
-
-	<header>
-		<div class="logobranco"><img src="../resources/logobranco.png" alt="logo" width="70" height="70"/></div>
-		<div class="menu">
-
-		<nav class="nav"> <!--APAGAR AQUI O STYLE, FOI PARA TESTAR-->
-			<ul>
-				<li>
-					<a href="../html/resource.html">Resources</a>
-				</li>
-
-				<li>
-					<a href="../html/feed.html">Feed</a>
-				</li>
-
-				<li>
-				<a href="../html/perfil.html">Profile</a>
-				</li>
-
-				<li>
-					<button id="LogOut">Log Out</button>
-				</li>
-
-			</ul>
-		</nav>
-		</div>
-	</header>
-
 	<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <img src="../resources/logobranco.png" alt="logo" width="70" height="70"/>
+                <h1>NewsFinder</h1>
+            </div>
+        </nav>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <div class="user-img-div">
+                            <img src="assets/img/transferir.png" id="mini_foto" class="img-thumbnail" />
 
-	<div class="noticia">
-	<output id="Nome" type="text"></output>
+                            <div>
+                                <output id="nome_utilizador" type="text"></output>
+                                <button id="LogOut">Logout </button>
+                            </div>
+                        </div>
+
+                    </li>
+
+
+                    <li>
+                        <a  href="../html/feed.html"><i ></i>Feed<span class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="../html/perfil.html"><i ></i>Profile <span class="fa arrow"></span></a>
+                         
+                    </li>
+                     <li>
+                        <a href="Resources.html"><i ></i>Resources <span class="fa arrow"></span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="noticia">
+                            <h1>Feed</h1>
+                            <ul class="scroll" id='infinite-list'></ul>
 	<p></p>
 	<output id="title" type="text"></output>
 	<p></p>
@@ -67,9 +111,29 @@ initial-scale=1">
 	<p></p>
 	<output id="Feed" type="text"></output>
 	<p></p>
-	<a id="link" href="" target="_blank">Link to the Page.</a>
 	<p></p>
-	<button id="Next">Next Feed</button>
 	</div>
-	</body>
+	
+                    </div>
+                </div>
+
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+
+
+</body>
 </html>

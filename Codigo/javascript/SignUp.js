@@ -9,8 +9,6 @@ function main(){
 	var txtemail = document.getElementById("email");
 	var txtPassword = document.getElementById("passwordtxt");
 	var txtConfirma = document.getElementById("confpasswordtxt");
-	var txtFirstName = document.getElementById("FirstNametxt");
-	var txtLastName = document.getElementById("LastNametxt");
 	var btnSignUp = document.getElementById("BSignUp");
 
 	txtemail.onkeypress = function(event){
@@ -28,16 +26,6 @@ function main(){
                     verificar();
                 }
             };
-	txtFirstName.onkeypress = function(event){
-                if (event.keyCode == 13){
-                    verificar();
-                }
-            };
-	txtLastName.onkeypress = function(event){
-                if (event.keyCode == 13){
-                    verificar();
-                }
-            };
 
 	btnSignUp.addEventListener("click" , verificar);
 
@@ -45,8 +33,6 @@ function main(){
 		var email = txtemail.value;
 		var pass = txtPassword.value;
 		var conf = txtConfirma.value;
-		var fName = txtFirstName.value;
-		var lName = txtLastName.value;
 		var auth = firebase.auth();   	// Firebase autenticação
 
 		if(email.length == 0){
@@ -58,25 +44,9 @@ function main(){
 		else if(pass!=conf){
 			alert("Passwords must match.");
 		}
-		else if(fName.length<2 || lName.length<2){
-			alert("Names must be at least 3 characters.");
-		}
 		else{
 			var controlo = 0;
-			for(var i=0; i<caract.length; i++){
-				for(var j=0; j<fName.length; j++){
-					if(caract[i] == fName[j]){
-						controlo++;
-					}
-				}
-			}
-			for(var i=0; i<caract.length; i++){
-				for(var j=0; j<lName.length; j++){
-					if(caract[i] == lName[j]){
-						controlo++;
-					}
-				}
-			}
+			
 			if(controlo == 0){
 				var confirmation = auth.createUserWithEmailAndPassword(email, pass);
 				confirmation.catch(e => {
@@ -96,10 +66,8 @@ function main(){
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if(firebaseUser){
 			var user = firebase.auth().currentUser;
-			var fName = txtFirstName.value;
-			var lName = txtLastName.value;
 			user.updateProfile({
-  				displayName: fName+"|"+lName
+  				displayName: "..."
 			}).then(function() {
   				window.location.href = "../html/dados.html";
 			}).catch(function(error) {

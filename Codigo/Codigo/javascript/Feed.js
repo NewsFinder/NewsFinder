@@ -54,11 +54,11 @@ function apresentaReddit(interesses, r){
 
 	array_interesses = check_interesses(interesses);
 	interesse_random = array_interesses[Math.floor(Math.random()*array_interesses.length)];
-	r.getHot().map(post => post).then(show);
+	r.getHot(interesse_random).map(post => post).then(show);
 	
 	function show(array){
 		title.innerHTML = "Reddit: "+(array[num].title);
-		var referencia = 'www.reddit.com'+array[num].permalink
+		var referencia = 'https://www.reddit.com'+array[num].permalink
 		link.setAttribute("href", referencia);
 		num++;
 	}

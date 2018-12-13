@@ -1,0 +1,65 @@
+/*#######################################################################*/
+/*#######################################################################*/
+
+/* At the end of each HTML code file the following three lines of code should be implemented, in this way, the HTML code
+ will be loaded and only after the CSS code will be applied.*/
+/* ######################################################### */
+/*
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+*/
+/* ######################################################### */
+
+/* PM CSS coding */
+        /* 1) Brief description */
+        /* 2) new CSS code */
+
+/* Mockup 1  -  landing page 2.0*/
+    /* Change the background color to dying blue;*/
+    /* body {background-color: 	#66909E;}  -----------------------------------> added in index.html line 13 after <style>*/
+    /* same color is applied to the buttons background ( Login & Sign Up); */
+    /* alteração da cor das letras para branco */
+    /* alteração do afastamento ao centro */
+    .blogin{
+        background-color: 	#66909E;    /* letter background color */
+        color: white;                   /* letter color */
+        left: 40%;                      /* afastamento ao centro */
+    }
+    .bsign{
+        background-color:	#66909E;    /* letter background color */
+        color: white;                   /* letter color */
+        right: 37.5%;                   /* afastamento ao centro */
+    }
+    /* adicionar logo branco no código html; line +/- 72, after <body>*/
+    /* FROM:
+		<img id="logoinicial" src="../resources/newsFinderLogo.png" alt="NewsFinderLogo" >
+       TO:
+        <img id="logoinicial" src="../resources/logobranco_new_dims.png" alt="NewsFinderLogo" > */
+    /* alteração da cor das letras para branco */
+    .vl{
+        background-color:#ffffff;
+    }
+
+/* Mockup 2  -  login_2.0*/
+    /* Modifications over the new Login.html page code */
+    /* Login title color; */
+    .login-sec h2 {
+        color: #65909E;
+    }
+    /* Separation bar after Login title; */
+    .login-sec h2:after {
+        background: #65909E;
+    }
+    /* change size of "USERNAME" and "PASSWORD" title; */
+    .h1, h1 {
+        font-size: 1.0rem;
+    }
+    /* input boxes with round borders */
+    input{
+        border-radius: 7px;
+    }
+    /* button round borders */
+    button {
+        border-radius: 5px;
+    }

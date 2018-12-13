@@ -4864,7 +4864,7 @@ function indexOf(xs, x) {
   return -1;
 }
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./_stream_duplex":17,"./internal/streams/BufferList":22,"./internal/streams/destroy":23,"./internal/streams/stream":24,"_process":11,"core-util-is":4,"events":5,"inherits":7,"isarray":9,"process-nextick-args":10,"safe-buffer":29,"string_decoder/":31,"util":2}],20:[function(require,module,exports){
+},{"./_stream_duplex":17,"./internal/streams/BufferList":22,"./internal/streams/destroy":23,"./internal/streams/stream":24,"_process":11,"core-util-is":4,"events":5,"inherits":7,"isarray":9,"process-nextick-args":10,"safe-buffer":30,"string_decoder/":25,"util":2}],20:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -5769,7 +5769,7 @@ Writable.prototype._destroy = function (err, cb) {
   cb(err);
 };
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("timers").setImmediate)
-},{"./_stream_duplex":17,"./internal/streams/destroy":23,"./internal/streams/stream":24,"_process":11,"core-util-is":4,"inherits":7,"process-nextick-args":10,"safe-buffer":29,"timers":32,"util-deprecate":35}],22:[function(require,module,exports){
+},{"./_stream_duplex":17,"./internal/streams/destroy":23,"./internal/streams/stream":24,"_process":11,"core-util-is":4,"inherits":7,"process-nextick-args":10,"safe-buffer":30,"timers":32,"util-deprecate":35}],22:[function(require,module,exports){
 'use strict';
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -5849,7 +5849,7 @@ if (util && util.inspect && util.inspect.custom) {
     return this.constructor.name + ' ' + obj;
   };
 }
-},{"safe-buffer":29,"util":2}],23:[function(require,module,exports){
+},{"safe-buffer":30,"util":2}],23:[function(require,module,exports){
 'use strict';
 
 /*<replacement>*/
@@ -5928,217 +5928,6 @@ module.exports = {
 module.exports = require('events').EventEmitter;
 
 },{"events":5}],25:[function(require,module,exports){
-module.exports = require('./readable').PassThrough
-
-},{"./readable":26}],26:[function(require,module,exports){
-exports = module.exports = require('./lib/_stream_readable.js');
-exports.Stream = exports;
-exports.Readable = exports;
-exports.Writable = require('./lib/_stream_writable.js');
-exports.Duplex = require('./lib/_stream_duplex.js');
-exports.Transform = require('./lib/_stream_transform.js');
-exports.PassThrough = require('./lib/_stream_passthrough.js');
-
-},{"./lib/_stream_duplex.js":17,"./lib/_stream_passthrough.js":18,"./lib/_stream_readable.js":19,"./lib/_stream_transform.js":20,"./lib/_stream_writable.js":21}],27:[function(require,module,exports){
-module.exports = require('./readable').Transform
-
-},{"./readable":26}],28:[function(require,module,exports){
-module.exports = require('./lib/_stream_writable.js');
-
-},{"./lib/_stream_writable.js":21}],29:[function(require,module,exports){
-/* eslint-disable node/no-deprecated-api */
-var buffer = require('buffer')
-var Buffer = buffer.Buffer
-
-// alternative to using Object.keys for old browsers
-function copyProps (src, dst) {
-  for (var key in src) {
-    dst[key] = src[key]
-  }
-}
-if (Buffer.from && Buffer.alloc && Buffer.allocUnsafe && Buffer.allocUnsafeSlow) {
-  module.exports = buffer
-} else {
-  // Copy properties from require('buffer')
-  copyProps(buffer, exports)
-  exports.Buffer = SafeBuffer
-}
-
-function SafeBuffer (arg, encodingOrOffset, length) {
-  return Buffer(arg, encodingOrOffset, length)
-}
-
-// Copy static methods from Buffer
-copyProps(Buffer, SafeBuffer)
-
-SafeBuffer.from = function (arg, encodingOrOffset, length) {
-  if (typeof arg === 'number') {
-    throw new TypeError('Argument must not be a number')
-  }
-  return Buffer(arg, encodingOrOffset, length)
-}
-
-SafeBuffer.alloc = function (size, fill, encoding) {
-  if (typeof size !== 'number') {
-    throw new TypeError('Argument must be a number')
-  }
-  var buf = Buffer(size)
-  if (fill !== undefined) {
-    if (typeof encoding === 'string') {
-      buf.fill(fill, encoding)
-    } else {
-      buf.fill(fill)
-    }
-  } else {
-    buf.fill(0)
-  }
-  return buf
-}
-
-SafeBuffer.allocUnsafe = function (size) {
-  if (typeof size !== 'number') {
-    throw new TypeError('Argument must be a number')
-  }
-  return Buffer(size)
-}
-
-SafeBuffer.allocUnsafeSlow = function (size) {
-  if (typeof size !== 'number') {
-    throw new TypeError('Argument must be a number')
-  }
-  return buffer.SlowBuffer(size)
-}
-
-},{"buffer":3}],30:[function(require,module,exports){
-// Copyright Joyent, Inc. and other Node contributors.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a
-// copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to permit
-// persons to whom the Software is furnished to do so, subject to the
-// following conditions:
-//
-// The above copyright notice and this permission notice shall be included
-// in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-// USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-module.exports = Stream;
-
-var EE = require('events').EventEmitter;
-var inherits = require('inherits');
-
-inherits(Stream, EE);
-Stream.Readable = require('readable-stream/readable.js');
-Stream.Writable = require('readable-stream/writable.js');
-Stream.Duplex = require('readable-stream/duplex.js');
-Stream.Transform = require('readable-stream/transform.js');
-Stream.PassThrough = require('readable-stream/passthrough.js');
-
-// Backwards-compat with node 0.4.x
-Stream.Stream = Stream;
-
-
-
-// old-style streams.  Note that the pipe method (the only relevant
-// part of this class) is overridden in the Readable class.
-
-function Stream() {
-  EE.call(this);
-}
-
-Stream.prototype.pipe = function(dest, options) {
-  var source = this;
-
-  function ondata(chunk) {
-    if (dest.writable) {
-      if (false === dest.write(chunk) && source.pause) {
-        source.pause();
-      }
-    }
-  }
-
-  source.on('data', ondata);
-
-  function ondrain() {
-    if (source.readable && source.resume) {
-      source.resume();
-    }
-  }
-
-  dest.on('drain', ondrain);
-
-  // If the 'end' option is not supplied, dest.end() will be called when
-  // source gets the 'end' or 'close' events.  Only dest.end() once.
-  if (!dest._isStdio && (!options || options.end !== false)) {
-    source.on('end', onend);
-    source.on('close', onclose);
-  }
-
-  var didOnEnd = false;
-  function onend() {
-    if (didOnEnd) return;
-    didOnEnd = true;
-
-    dest.end();
-  }
-
-
-  function onclose() {
-    if (didOnEnd) return;
-    didOnEnd = true;
-
-    if (typeof dest.destroy === 'function') dest.destroy();
-  }
-
-  // don't leave dangling pipes when there are errors.
-  function onerror(er) {
-    cleanup();
-    if (EE.listenerCount(this, 'error') === 0) {
-      throw er; // Unhandled stream error in pipe.
-    }
-  }
-
-  source.on('error', onerror);
-  dest.on('error', onerror);
-
-  // remove all the event listeners that were added.
-  function cleanup() {
-    source.removeListener('data', ondata);
-    dest.removeListener('drain', ondrain);
-
-    source.removeListener('end', onend);
-    source.removeListener('close', onclose);
-
-    source.removeListener('error', onerror);
-    dest.removeListener('error', onerror);
-
-    source.removeListener('end', cleanup);
-    source.removeListener('close', cleanup);
-
-    dest.removeListener('close', cleanup);
-  }
-
-  source.on('end', cleanup);
-  source.on('close', cleanup);
-
-  dest.on('close', cleanup);
-
-  dest.emit('pipe', source);
-
-  // Allow for unix-like usage: A.pipe(B).pipe(C)
-  return dest;
-};
-
-},{"events":5,"inherits":7,"readable-stream/duplex.js":16,"readable-stream/passthrough.js":25,"readable-stream/readable.js":26,"readable-stream/transform.js":27,"readable-stream/writable.js":28}],31:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -6435,7 +6224,218 @@ function simpleWrite(buf) {
 function simpleEnd(buf) {
   return buf && buf.length ? this.write(buf) : '';
 }
-},{"safe-buffer":29}],32:[function(require,module,exports){
+},{"safe-buffer":30}],26:[function(require,module,exports){
+module.exports = require('./readable').PassThrough
+
+},{"./readable":27}],27:[function(require,module,exports){
+exports = module.exports = require('./lib/_stream_readable.js');
+exports.Stream = exports;
+exports.Readable = exports;
+exports.Writable = require('./lib/_stream_writable.js');
+exports.Duplex = require('./lib/_stream_duplex.js');
+exports.Transform = require('./lib/_stream_transform.js');
+exports.PassThrough = require('./lib/_stream_passthrough.js');
+
+},{"./lib/_stream_duplex.js":17,"./lib/_stream_passthrough.js":18,"./lib/_stream_readable.js":19,"./lib/_stream_transform.js":20,"./lib/_stream_writable.js":21}],28:[function(require,module,exports){
+module.exports = require('./readable').Transform
+
+},{"./readable":27}],29:[function(require,module,exports){
+module.exports = require('./lib/_stream_writable.js');
+
+},{"./lib/_stream_writable.js":21}],30:[function(require,module,exports){
+/* eslint-disable node/no-deprecated-api */
+var buffer = require('buffer')
+var Buffer = buffer.Buffer
+
+// alternative to using Object.keys for old browsers
+function copyProps (src, dst) {
+  for (var key in src) {
+    dst[key] = src[key]
+  }
+}
+if (Buffer.from && Buffer.alloc && Buffer.allocUnsafe && Buffer.allocUnsafeSlow) {
+  module.exports = buffer
+} else {
+  // Copy properties from require('buffer')
+  copyProps(buffer, exports)
+  exports.Buffer = SafeBuffer
+}
+
+function SafeBuffer (arg, encodingOrOffset, length) {
+  return Buffer(arg, encodingOrOffset, length)
+}
+
+// Copy static methods from Buffer
+copyProps(Buffer, SafeBuffer)
+
+SafeBuffer.from = function (arg, encodingOrOffset, length) {
+  if (typeof arg === 'number') {
+    throw new TypeError('Argument must not be a number')
+  }
+  return Buffer(arg, encodingOrOffset, length)
+}
+
+SafeBuffer.alloc = function (size, fill, encoding) {
+  if (typeof size !== 'number') {
+    throw new TypeError('Argument must be a number')
+  }
+  var buf = Buffer(size)
+  if (fill !== undefined) {
+    if (typeof encoding === 'string') {
+      buf.fill(fill, encoding)
+    } else {
+      buf.fill(fill)
+    }
+  } else {
+    buf.fill(0)
+  }
+  return buf
+}
+
+SafeBuffer.allocUnsafe = function (size) {
+  if (typeof size !== 'number') {
+    throw new TypeError('Argument must be a number')
+  }
+  return Buffer(size)
+}
+
+SafeBuffer.allocUnsafeSlow = function (size) {
+  if (typeof size !== 'number') {
+    throw new TypeError('Argument must be a number')
+  }
+  return buffer.SlowBuffer(size)
+}
+
+},{"buffer":3}],31:[function(require,module,exports){
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+module.exports = Stream;
+
+var EE = require('events').EventEmitter;
+var inherits = require('inherits');
+
+inherits(Stream, EE);
+Stream.Readable = require('readable-stream/readable.js');
+Stream.Writable = require('readable-stream/writable.js');
+Stream.Duplex = require('readable-stream/duplex.js');
+Stream.Transform = require('readable-stream/transform.js');
+Stream.PassThrough = require('readable-stream/passthrough.js');
+
+// Backwards-compat with node 0.4.x
+Stream.Stream = Stream;
+
+
+
+// old-style streams.  Note that the pipe method (the only relevant
+// part of this class) is overridden in the Readable class.
+
+function Stream() {
+  EE.call(this);
+}
+
+Stream.prototype.pipe = function(dest, options) {
+  var source = this;
+
+  function ondata(chunk) {
+    if (dest.writable) {
+      if (false === dest.write(chunk) && source.pause) {
+        source.pause();
+      }
+    }
+  }
+
+  source.on('data', ondata);
+
+  function ondrain() {
+    if (source.readable && source.resume) {
+      source.resume();
+    }
+  }
+
+  dest.on('drain', ondrain);
+
+  // If the 'end' option is not supplied, dest.end() will be called when
+  // source gets the 'end' or 'close' events.  Only dest.end() once.
+  if (!dest._isStdio && (!options || options.end !== false)) {
+    source.on('end', onend);
+    source.on('close', onclose);
+  }
+
+  var didOnEnd = false;
+  function onend() {
+    if (didOnEnd) return;
+    didOnEnd = true;
+
+    dest.end();
+  }
+
+
+  function onclose() {
+    if (didOnEnd) return;
+    didOnEnd = true;
+
+    if (typeof dest.destroy === 'function') dest.destroy();
+  }
+
+  // don't leave dangling pipes when there are errors.
+  function onerror(er) {
+    cleanup();
+    if (EE.listenerCount(this, 'error') === 0) {
+      throw er; // Unhandled stream error in pipe.
+    }
+  }
+
+  source.on('error', onerror);
+  dest.on('error', onerror);
+
+  // remove all the event listeners that were added.
+  function cleanup() {
+    source.removeListener('data', ondata);
+    dest.removeListener('drain', ondrain);
+
+    source.removeListener('end', onend);
+    source.removeListener('close', onclose);
+
+    source.removeListener('error', onerror);
+    dest.removeListener('error', onerror);
+
+    source.removeListener('end', cleanup);
+    source.removeListener('close', cleanup);
+
+    dest.removeListener('close', cleanup);
+  }
+
+  source.on('end', cleanup);
+  source.on('close', cleanup);
+
+  dest.on('close', cleanup);
+
+  dest.emit('pipe', source);
+
+  // Allow for unix-like usage: A.pipe(B).pipe(C)
+  return dest;
+};
+
+},{"events":5,"inherits":7,"readable-stream/duplex.js":16,"readable-stream/passthrough.js":26,"readable-stream/readable.js":27,"readable-stream/transform.js":28,"readable-stream/writable.js":29}],32:[function(require,module,exports){
 (function (setImmediate,clearImmediate){
 var nextTick = require('process/browser.js').nextTick;
 var apply = Function.prototype.apply;
@@ -7356,21 +7356,94 @@ function main(){
 	  refreshToken: '95212774921-R6jorxu6Q99DpmeLerFO0S3_aoE'
 	});
 
-	var next = document.getElementById("Next");
 	var logout = document.getElementById("LogOut");
-	var nome = document.getElementById("Nome");
 	var interesses;
+	var nome = document.getElementById("nome_utilizador");
 	num = 0;
+	var controlo_foto;
+
+	var listElm = document.querySelector('#infinite-list');
 	
+
+	function escreve_reddit(string){
+
+		var img = new Image();
+		img.src = "../resources/reddit_icon.png";
+		listElm.appendChild(img);
+
+		var item = document.createElement('li');
+	    item.innerText = string[0];
+	    listElm.appendChild(item);
+
+	    var item1 = document.createElement('li');
+	    item1.innerText = "Title: " + string[1];
+	    listElm.appendChild(item1);
+
+	    var item2 = document.createElement('a');
+	    item2.style.color = "#0000FF";
+	    item2.href = string[2];
+	    item2.target = "_blank";
+	    item2.innerText = string[2];
+	    listElm.appendChild(item2);
+
+	    var item3 = document.createElement('li');
+	    item3.innerText = string[3] + " Comments";
+	    listElm.appendChild(item3);
+
+	    var item4 = document.createElement('li');
+	    item4.innerText = "\n";
+	    listElm.appendChild(item4);
+	}
+
+	function apresentaReddit(interesses, r){
+		//falta um limitador no NUM, falta interesses, controlo se interesse existe mesmo || Tem de ser tudo junto
+		var title = document.getElementById("title");
+		var link = document.getElementById("link");
+		var array_interesses;
+		var interesse_random;
+		var aux_string ="";
+
+		array_interesses = check_interesses(interesses);
+		interesse_random = array_interesses[Math.floor(Math.random()*array_interesses.length)];
+		r.getHot(interesse_random).map(post => post).then(show);
+		
+		function show(array){
+			//console.log(array[num])
+			//title.innerHTML = "Reddit: "+(array[num].title);
+			var referencia = 'https://www.reddit.com'+array[num].permalink
+			aux_string = array[num].subreddit_name_prefixed + "|" + array[num].title + "|" + referencia + "|" + array[num].num_comments + "|";
+			num++;
+			escreve_reddit(aux_string.split("|"));
+		}
+	}
+
+	var loadMore = function() {
+	  for (var i = 0; i < 5; i++) 
+	    apresentaReddit(interesses, r);
+	}
+
+	// Detect when scrolled to bottom.
+	listElm.addEventListener('scroll', function() {
+	  if (listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
+	    loadMore();
+	  }
+	});
+	
+
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if(firebaseUser){
-			nome.innerHTML = "USER: "+firebaseUser.displayName.split("|")[0]+" "+firebaseUser.displayName.split("|")[1];
+			nome.innerHTML = firebaseUser.displayName.split("|")[0]+" "+firebaseUser.displayName.split("|")[1];
 			interesses = firebaseUser.displayName.split("|")[5];
-			apresentaReddit(interesses, r);
+			controlo_foto = firebaseUser.displayName.split("|")[6];
+			if(controlo_foto==1){
+				carrega_imagem(firebaseUser.email);
+			}
+			// Initially load some items.
+			loadMore();
+			//apresentaReddit(interesses, r);
 		}
 	});
 
-	next.addEventListener("click", mudarReddit);
 	logout.addEventListener("click", logingOut);
 
 	function mudarReddit(){
@@ -7384,25 +7457,7 @@ function main(){
 
 }
 
-function apresentaReddit(interesses, r){
-	//falta um limitador no NUM, falta interesses, controlo se interesse existe mesmo || Tem de ser tudo junto
-	var title = document.getElementById("title");
-	var link = document.getElementById("link");
-	var array_interesses;
-	var interesse_random;
 
-
-	array_interesses = check_interesses(interesses);
-	interesse_random = array_interesses[Math.floor(Math.random()*array_interesses.length)];
-	r.getHot(interesse_random).map(post => post).then(show);
-	
-	function show(array){
-		title.innerHTML = "Reddit: "+(array[num].title);
-		var referencia = 'https://www.reddit.com'+array[num].permalink
-		link.setAttribute("href", referencia);
-		num++;
-	}
-}
 
 function check_interesses(interesses){
 	var aux;
@@ -7411,6 +7466,33 @@ function check_interesses(interesses){
 
 	return aux;
 }
+
+function retefica_nome(nome){
+
+	//Alteração de '.' -> '!'  e '@' -> '#' para ser aceite no storage
+	var aux;
+
+	aux = nome.replace('@','#');
+
+	for(var i=0 ; i<nome.length; i++)
+		if(nome[i].localeCompare('.')==0)
+			aux = aux.replace('.','!');
+
+	return aux;
+}
+
+function carrega_imagem(email){
+	var ref = firebase.storage().ref('fotos_perfil/' + retefica_nome(email));
+	var foto = document.getElementById("mini_foto");
+
+	ref.getDownloadURL().then(function(url){
+		foto.src = url;
+		//foto.width=150;
+		//foto.height=150;
+	})
+}
+
+
 },{"snoowrap":322}],37:[function(require,module,exports){
 (function (process,global,setImmediate){
 /* @preserve
@@ -25340,7 +25422,7 @@ var Subreddit = class Subreddit extends _RedditContent2.default {
 };
 
 exports.default = Subreddit;
-},{"../Promise.js":301,"../errors.js":304,"../helpers.js":305,"./RedditContent.js":312,"fs":2,"lodash/chunk":237,"lodash/flatten":248,"lodash/map":275,"lodash/omit":282,"stream":30}],317:[function(require,module,exports){
+},{"../Promise.js":301,"../errors.js":304,"../helpers.js":305,"./RedditContent.js":312,"fs":2,"lodash/chunk":237,"lodash/flatten":248,"lodash/map":275,"lodash/omit":282,"stream":31}],317:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

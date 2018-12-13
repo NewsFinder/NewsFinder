@@ -4,7 +4,7 @@
 
 function main(){
 
-	var foto = document.getElementById("imgF");
+	var foto = document.getElementById("foto_perfil");
 	var orcid = document.getElementById("orcid");
 	var filiacao = document.getElementById("filiacao");
 	var unidade = document.getElementById("unidade");
@@ -12,16 +12,19 @@ function main(){
 	var nome = document.getElementById("nome");
 	var logout = document.getElementById("LogOut");
 	var change = document.getElementById("btnChange");
+	var mini_foto = document.getElementById("mini_foto");
 
 	logout.addEventListener("click", e =>{
 		firebase.auth().signOut();
 		window.location.href = "../html/index.html";
 	});
 
-	change.addEventListener("click", e =>{
+	/*change.addEventListener("click", e =>{
 		window.location.href = "../html/changeProfile.html";
-	});
+	});*/
 	
+	var controlo_foto;
+
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if(firebaseUser){
 			//console.log(firebaseUser);
@@ -30,14 +33,17 @@ function main(){
 			filiacao.innerHTML += firebaseUser.displayName.split("|")[3];
 			unidade.innerHTML += firebaseUser.displayName.split("|")[4];
 			interesses.innerHTML += firebaseUser.displayName.split("|")[5];
-
-			var ref = firebase.storage().ref('fotos_perfil/' + retefica_nome(firebaseUser.email) );
-
-			ref.getDownloadURL().then(function(url){
-				foto.src = url;
-				foto.width=150;
-				foto.height=150;
-			})
+			controlo_foto = firebaseUser.displayName.split("|")[6];
+			
+			if(controlo_foto==1){
+				var ref = firebase.storage().ref('fotos_perfil/' + retefica_nome(firebaseUser.email) );
+				ref.getDownloadURL().then(function(url){
+					foto.src = url;
+					mini_foto.src = url;
+					foto.width=150;
+					foto.height=150;
+				})
+			}
 		}
 	});	
 }

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<style>
+	@font-face { font-family: Drugs; src: url('../resources/fonte/Drugs.otf'); }
+
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    #infinite-list {
+      /* We need to limit the height and show a scrollbar */
+      width: auto;
+      height: 400px;
+      overflow: auto;
+
+      /* Optional, only to check that it works with margin/padding */
+      margin: 30px;
+      padding: 20px;
+      border: 1px solid black;
+    }
+
+    /* Optional eye candy below: */
+    .scroll {
+      padding: 10px;
+      list-style-type: none;
+    }
+
+</style>
+<head>
+	<meta charset="UTF-8">
+	<title>NewsFinder</title>
+	<meta name="viewport" content="width=device-width,
+initial-scale=1">
+		<!-- BOOTSTRAP STYLES-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!--CUSTOM BASIC STYLES-->
+    <link href="assets/css/basic.css" rel="stylesheet" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+		<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+		<script type="text/javascript" src="../javascript/Resource.js"></script>
+
+</head>
+
+
+	<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <img src="../resources/logobranco.png" alt="logo" width="70" height="70"/>
+                <h1>NewsFinder</h1>
+            </div>
+        </nav>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <div class="user-img-div">
+                            <img src="assets/img/transferir.png" id="mini_foto" class="img-thumbnail" />
+
+                            <div class="inner-text">
+                                <output id="nome_utilizador" type="text"></output>
+                                <button id="logOut">Logout </button>
+                            </div>
+                        </div>
+
+                    </li>
+
+
+                    <li>
+                        <a  href="../html/feed.html"><i ></i>Feed<span class="fa arrow"></span></a>
+                        
+                    </li>
+                    <li>
+                        <a href="../html/perfil.html"><i ></i>Profile <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="dados.html"><i></i>Edit Profile</a>
+                            </li>
+                        </ul> 
+                    </li>
+                     <li>
+                        <a href="Resources.html"><i></i>Resources <span class="fa arrow"></span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+<div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="noticia">
+                            <h1>Resources</h1>
+                            <button id="BtAdd">Add Resource</button>
+                            <button id="BtRemove">Remove Resource</button>
+                            <div id="ModalAdd" class="modal">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <h1>Description: <input type="text" id="idDescription"> </h1>
+                                    <h1>Link: <input type="text" id="idLink"></h1>
+                                    <button id="BtCancel">Cancel</button>
+                                    <button id="BtSave">Save</button>
+                                </div>
+                            </div>
+                            <ul class="scroll" id='infinite-list'></ul>
+	
+	</div>
+	
+                    </div>
+                </div>
+
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+		<script>
+		    // Initialize Firebase
+		    var config = {
+		        apiKey: "AIzaSyArg5CxQa8i555rllPY4TQTQOK8gl7TWb4",
+		        authDomain: "newsfinder-5a095.firebaseapp.com",
+		        databaseURL: "https://newsfinder-5a095.firebaseio.com",
+		        projectId: "newsfinder-5a095",
+		        storageBucket: "newsfinder-5a095.appspot.com",
+		        messagingSenderId: "814840962770"
+		    };
+		    firebase.initializeApp(config);
+		</script>
+
+</body>
+</html>
+

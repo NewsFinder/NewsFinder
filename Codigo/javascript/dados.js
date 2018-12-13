@@ -10,130 +10,114 @@ function main(){
 
 	var foto = document.getElementById("foto");
 	var orcid = document.getElementById("orcid");
-	var filiacao = document.getElementById("filiacao");
 	var unidade = document.getElementById("unidade");
-	var interesses = document.getElementById("interesses");
 	var bsave = document.getElementById("Save");
-	var textbox = document.getElementById("Info");
-	var bAdd = document.getElementById("Add");
 
-	var array = [];
-
-	bAdd.addEventListener("click", baddPressed);
-
-	function baddPressed(){
-		if(interesses.value.length == 0)
-			alert("The Interests field is empty.");
-		else{
-			var controlo = 0;
-			controlo += verificar(interesses.value, 0);
-			if(controlo==0){
-				if(array.indexOf(interesses.value) != -1){
-					alert("This Interests is already added.");
-				}
-				else{
-					array.push(interesses.value);
-					if(array.length == 1)
-						textbox.innerHTML += interesses.value;
-					else
-						textbox.innerHTML += ", "+interesses.value;
-				}
-			}
-		}
-	}
+	var img_controlo = 1;
 
 	bsave.addEventListener("click", bsavePressed);
 
 	function bsavePressed(){
 		var photo = foto.files[0];
-		if(photo == null)
-			alert("You must upload an image.");
-		else if(orcid.value.length == 0)
+
+		if(photo == null){
+			img_controlo = 0;
+		}
+		if(orcid.value.length == 0)
 			alert("The ORCID field is empty.");
-		else if(filiacao.value.length == 0)
-			alert("The Affiliation field is empty.");
 		else if(unidade.value.length == 0)
 			alert("The Research Unit field is empty.");
-		else if(array.length == 0)
-			alert("The Interests field is empty.");
-		else if(!photo.name.includes(".jpg") && !photo.name.includes(".png") && !photo.name.includes(".jpeg"))
+		else if(img_controlo==1 && !photo.name.includes(".jpg") && !photo.name.includes(".png") && !photo.name.includes(".jpeg"))
 			alert("Photo must be JPEG or PNG format.");
 		else{
-
 			//Buscar utilizador e suas informações
 			var user = firebase.auth().currentUser;
 
-			//Dar storage da foto
-			//Criar referencia do storage
-			var storage = firebase.storage().ref('fotos_perfil/' + valida_nome(user.email));
-			
 			//Upload
-			var task = storage.put(photo);
+			if(img_controlo==1){
+				//Dar storage da foto
+				//Criar referencia do storage
+				var storage = firebase.storage().ref('fotos_perfil/' + valida_nome(user.email));
+				var task = storage.put(photo);
 
-			task.on('state_changed', 
+				task.on('state_changed', 
 
-				function progress(snapshot){
-					console.log((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
-				},
+					function progress(snapshot){
+						console.log((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
+					},
 
-				function error(err){
-					console.log(err);				
-				},
+					function error(err){
+						console.log(err);				
+					},
 
-				function complete(){
+					function complete(){
+						finaliza();
+							
+				});
+			}
+			else 
+				finaliza();
 
-					//Controlo de segurança de strings
-					var controlo = 0;
+			function finaliza(){
+				//Controlo de segurança de strings
+				var controlo = 0;
 					
-					window.addEventListener("message" , mensagem);
+				window.addEventListener("message" , mensagem);
 
-					controlo += verificar(filiacao.value, 0);
-					controlo += verificar(unidade.value, 0);
-					controlo += verificar(orcid.value, 1);
+				controlo += verificar(unidade.value, 0);
+				controlo += verificar(orcid.value, 1);
+				var orcidID;
 
-					if(controlo==0){
-						var orcidID = transforma_orcid(orcid.value);
-						
-						var check_orcid;
-						checkORCIDProfile(orcidID);
-					}	
-						
-					function mensagem(ev){
-						if(ev.data == "ORCID_1"){
-							controlo+= 1;
-							alert("ORCID number is not valid");
-						}
-						else{
-							var aux2;
-							for(let i=0; i<array.length; i++){
-								if(i==0){
-									aux2 = array[0];
-								}
-								else{
-									aux2 += ","+array[i];
-								}
-							}
+				if(controlo==0){
+					orcidID = transforma_orcid(orcid.value);
+					checkORCIDProfile(orcidID);
+				}	
+							
+				function mensagem(ev){
+					if(ev.data == "ORCID_1"){
+						controlo+= 1;
+						alert("ORCID number is not valid");
+					}
+					else{
+						var keywords = le_XML(orcidID, "keyword:content");
+						var nome = le_XML(orcidID, "personal-details:given-names") + "|" + le_XML(orcidID, "personal-details:family-name");
+						var filiacao = ""; 
+						console.log(keywords + " | " + nome + " | " + orcidID);
+
+						if(img_controlo == 1){
 							var reader = new FileReader();
 							reader.onloadend = function () {
-								var aux = user.displayName;
+							
 								user.updateProfile({
-				  					displayName: aux+"|"+orcid.value+"|"+filiacao.value+"|"+unidade.value+"|"+aux2+"|"
+									//faltar ler ficheiro XML
+									displayName: nome+"|"+orcidID+"|"+filiacao+"|"+unidade.value+"|"+keywords+"|"+img_controlo+"|"
 								}).then(function() {
 
 									window.location.href="../html/feed.html";	
-								
+										
 								}).catch(function(error) {
-				  					console.log(error);
+			  						console.log(error);
 								});
-			       			}
-			   				if(photo){
-			      				reader.readAsDataURL(photo);
-			    			}
+		       				}
+		  					if(photo){
+			 					reader.readAsDataURL(photo);
+		    				}
 						}
+						else{
+							user.updateProfile({
+									//faltar ler ficheiro XML
+									displayName: nome+"|"+orcidID+"|"+filiacao+"|"+unidade.value+"|"+keywords+"|"+img_controlo+"|"
+								}).then(function() {
 
+									window.location.href="../html/feed.html";	
+										
+								}).catch(function(error) {
+			  						console.log(error);
+								});
+	    				}
 					}
-						
-			});
+				}
+			}
 			
 		}
 	}
@@ -182,7 +166,7 @@ function valida_nome(nome){
 
 function checkORCIDProfile(orcidID) {
 
-    var ORCIDLink = "https://pub.orcid.org/v2.0/" + orcidID + "/works";
+    var ORCIDLink = "https://pub.orcid.org/v2.0/" + orcidID;
 
 
     fetch(ORCIDLink, {
@@ -223,4 +207,24 @@ function transforma_orcid(orcid){
 	}
 
 	return orcid_format;
+}
+
+
+function le_XML(orcid, flag){
+	var request = new XMLHttpRequest();
+	request.open("GET", "https://pub.orcid.org/v2.0/"+orcid, false);
+	request.send();
+	var xml = request.responseXML;
+	var users = xml.getElementsByTagName(flag);
+
+	var string = "";
+
+	for(var j = 0; j < users.length; j++) {
+		if(j==0)
+	    	string += users[j].childNodes[0].nodeValue;
+	    else
+	    	string += "," + users[j].childNodes[0].nodeValue;
+	}
+
+	return string;
 }

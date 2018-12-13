@@ -1,240 +1,116 @@
 <!DOCTYPE html>
 <html>
-
+<style>
+	@font-face { font-family: Drugs; src: url('../resources/fonte/Drugs.otf'); }
+</style>
 <head>
 	<meta charset="UTF-8">
 	<title>NewsFinder</title>
 	<meta name="viewport" content="width=device-width,
 initial-scale=1">
+		<!-- BOOTSTRAP STYLES-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!--CUSTOM BASIC STYLES-->
+    <link href="assets/css/basic.css" rel="stylesheet" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+		<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+		<script type="text/javascript" src="../javascript/perfil.js"></script>
 
 </head>
 
-<style>
-
-	@font-face { font-family: Drugs; src: url('../resources/fonte/Drugs.otf'); }
-
-	.bfeed{
-		position: absolute;
-		width: 98px;
-		height: 31px;
-		left: 1029px;
-		top: 26px;
-
-		font-style: normal;
-		font-weight: normal;
-		line-height: normal;
-		font-size: 20px;
-
-		color: #FFFFFF;
-	}
-
-	.bprofile{
-		position: absolute;
-		width: 105px;
-		height: 31px;
-		left: 1159px;
-		top: 26px;
-
-		font-style: normal;
-		font-weight: normal;
-		line-height: normal;
-		font-size: 33px;
-
-		color: #FFFFFF;
-	}
-
-	.foto{
-		position: absolute;
-		width: 147px;
-		height: 144px;
-		left: 10%;
-		top: 132px;
-		background: #C4C4C4;
-	}
-
-	.nome{
-		font-family: Drugs;
-		position: absolute;
-		width: 590px;
-		height: 70px;
-		left: 306px;
-		top: 159px;
-		font-style: normal;
-		font-weight: normal;
-		line-height: normal;
-		font-size: 48px;
-
-		color: #000000;
-	}
-
-	.orcid{
-		position: absolute;
-		width: 223px;
-
-		font-style: normal;
-		font-weight: normal;
-		line-height: normal;
-		font-size: 27px;
-
-		color: #000000;
-	}
-
-	.interesses{
-		position: absolute;
-		width: 631px;
-
-		font-style: normal;
-		font-weight: normal;
-		line-height: normal;
-		font-size: 27px;
-
-		color: #000000;
-
-	}
-
-	.unidade{
-		position: absolute;
-		width: 631px;
-
-		font-family: Roboto;
-		font-style: normal;
-		font-weight: normal;
-		line-height: normal;
-		font-size: 27px;
-
-		color: #000000;
-	}
-
-	.filiacao{
-		position: absolute;
-		width: 631px;
-
-		font-family: Roboto;
-		font-style: normal;
-		font-weight: normal;
-		line-height: normal;
-		font-size: 27px;
-
-		color: #000000;
-	}
-
-
-
-	header{
-		position: fixed;
-		width: 100%;
-		height: 90px;
-		left: 0px;
-		top: 0px;
-		background: #65909E;
-	}
-
-	.logobranco{
-		position: fixed;
-		width: 20px;
-		height: 20px;
-		margin-left: 30px;
-		margin-top: 10px;
-
-	}
-
-	.menu {
-		width: 80%;
-		float: right;
-		position: relative;
-		right:5%;
-
-	}
-
-	header ul {
-		margin: 30px auto;
-		padding: 0 20px;
-		text-align: right;
-	}
-
-
-	header ul li a {
-		text-decoration: none;
-		color: white;
-		font-size:20px;
-		font-family: Drugs;
-
-
-	}
-
-		header li {
-		display: inline-block;
-		width: 150px;
-	}
-
-	header ul li a:hover {
-		font-weight:bolder;
-
-	}
-
-	#LogOut{
-		font-family: Drugs;
-		border: none;
-		background-color: transparent;
-		color: white;
-		font-size:20px;
-	}
-
-
-	#LogOut:hover {
-		font-weight:bolder;
-
-	}
-
-	#orcid, #foto, #filiacao, #unidade, #interesses{
-		position: relative;
-		width: 220px;
-		box-sizing: border-box;
-		font-family: Drugs;
-		margin: 10px 0px;
-		top:300px;
-		left:10%;
-	}
-</style>
-
-	<header>
-		<div class="logobranco"><img src="../resources/logobranco.png" alt="logo" width="70" height="70"/></div>
-		<div class="menu">
-
-			<nav class="nav">
-				<ul>
-					<li>
-						<a href="../html/resource.html">Resources</a>
-					</li>
-					
-					<li>
-						<a href="../html/feed.html">Feed</a>
-					</li>
-
-					<li>
-						<a href="../html/perfil.html">Profile</a>
-					</li>
-
-					<li>
-						<button id="LogOut">Log Out</button>
-					</li>
-
-				</ul>
-			</nav>
-		</div>
-	</header>
 
 	<body>
-		
-		<div class="foto"><img id="imgF"src=""/></div>
-		<div id="nome" class="nome">NOME: </div>
-		<div id="orcid" class="orcid">ORCID: </div>
-		<div id="interesses" class="interesses">Interests: </div>
-		<div id="unidade" class="unidade">Research Unit: </div>
-		<div id="filiacao" class="filiacao">Affiliation: </div>
-		<button id="btnChange">Change</button>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="../resources/logobranco.png" alt="logo" width="70" height="70"/>
+                <h1>NewsFinder</h1>
+            </div>
+        </nav>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <div class="user-img-div">
+                            <img src="assets/img/transferir.png" id="mini_foto" class="img-thumbnail" />
 
-	</body>
+                            <div class="inner-text">
+                                <output id="nome_utilizador" type="text"></output>
+                                <button id="LogOut">Logout </button>
+                            </div>
+                        </div>
+
+                    </li>
+
+
+                    <li>
+                        <a  href="../html/feed.html"><i ></i>Feed<span class="fa arrow"></span></a>
+                        
+                    </li>
+                    <li>
+                        <a href="../html/perfil.html"><i ></i>Profile <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="changeProfile.html"><i></i>Edit Profile</a>
+                            </li>
+                        </ul> 
+                    </li>
+                     <li>
+                        <a href="Resources.html"><i ></i>Resources <span class="fa arrow"></span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+<div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="user-img-top">
+                            <img src="assets/img/transferir.png" id="foto_perfil" class="img-profile" />
+                            <h1 id = "nome"> First name </h1>                         
+                            
+                        </div>
+	
+		<div class= "perfil">
+		<p><img id="imgF"src=""/></p>
+        <h1 id="interesses">Interests: </h1>
+        <h1 id="filiacao">Affiliation: </h1>
+		<h1 id="unidade">Research Unit: </h1>
+		<h1 id="orcid">ORCID: </h1>
+		<!--<button id="btnChange">Change</button> -->
+        </div>
+</div>
+                </div>
+
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
 
 	<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
 		<script>
@@ -249,7 +125,6 @@ initial-scale=1">
 		    };
 		    firebase.initializeApp(config);
 		</script>
-
-		<script type="text/javascript" src="../javascript/perfil.js"></script>
-
+</body>
 </html>
+

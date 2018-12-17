@@ -9,16 +9,22 @@ function main(){
 	// P.M.#########  
 	var foto = document.getElementById("fileToUpload");
 	var txtunidade = document.getElementById("ResearchUnit_txt");
-	var btnFileUpload = document.getElementById("B_file");
+	var btnFileUpload = document.getElementById("B_file"); 
 	// ######################
 	var txtemail = document.getElementById("email");
 	var txtPassword = document.getElementById("passwordtxt");
 	var txtConfirma = document.getElementById("confpasswordtxt");
+	var txtORCID = document.getElementById("ORCID_txt");
 	//var txtFirstName = document.getElementById("FirstNametxt");
 	//var txtLastName = document.getElementById("LastNametxt");
 	var btnSignUp = document.getElementById("BSignUp");
 	
 	// PM ########################
+	txtORCID.onkeypress = function(event){
+		if(event.keycode == 13){
+			verificar();
+		}
+	}; 
 	txtunidade.onkeypress = function(event){
 		if(event.keycode == 13){
 			verificar();
@@ -54,13 +60,14 @@ function main(){
 	btnSignUp.addEventListener("click" , verificar);
 	
 	// P.M. ###################
-	btnFileUpload.addEventListener("click" , B_Upload_pressed);
+	btnFileUpload.addEventListener("click" , B_Upload_pressed); 
 	// ########################
 	
 	function verificar(){
 		// PM ###########
 		var photo = foto.files[0];
 		var unidade = txtunidade.value;
+		var ORCID_var = txtORCID.value;
 		//###############
 		var email = txtemail.value;
 		var pass = txtPassword.value;
@@ -84,6 +91,9 @@ function main(){
 		// P.M. ########
 		else if(unidade.length == 0){
 			alert("The research unit field is empty.");
+		}
+		else if(ORCID_var.length<6 || ORCID_var.length>24){
+			alert("The ORCID number must be between 6 and 24 characters########.");
 		}
 		/*else if(photo == null){
 			alert("You must upload an image.");
@@ -156,7 +166,7 @@ function main(){
 			alert("Image file upload terminated.")
 		}
 		
-	}
+	} 
 	//#############################################################################################################
 	//#############################################################################################################
 	//#############################################################################################################

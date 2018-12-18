@@ -103,6 +103,8 @@ initial-scale=1">
                     <div class="col-md-12">
                         <div class="noticia">
                             <h1>Feed</h1>
+                            <button id="btnFB" onclick="login()">FB Login</button>
+							<button id="btnPost">Post</button>
                             <ul class="scroll" id='infinite-list'></ul>
 	<p></p>
 	<output id="title" type="text"></output>
@@ -136,4 +138,55 @@ initial-scale=1">
 
 
 </body>
+<script>
+  	window.fbAsyncInit = function() {
+    	FB.init({
+      		appId      : '219195788853425',
+      		cookie     : true,
+     		xfbml      : true,
+      		version    : 'v3.2'
+    	});
+      
+    	FB.getLoginStatus(function(response) {
+    		statusChangeCallback(response);
+		});
+      
+  	};
+
+  	(function(d, s, id){
+     	var js, fjs = d.getElementsByTagName(s)[0];
+     	if (d.getElementById(id)) {return;}
+     	js = d.createElement(s); js.id = id;
+     	js.src = "https://connect.facebook.net/en_US/sdk.js";
+     	fjs.parentNode.insertBefore(js, fjs);
+   	}(document, 'script', 'facebook-jssdk'));
+
+  	document.getElementById("btnPost").onclick = function(){
+  		FB.ui({
+  		method: 'share',
+  		href: 'https://newsfinder-5a095.firebaseapp.com',
+		}, function(response){});
+  	}
+
+  	function statusChangeCallback(response){
+  		if(response.status === 'connected'){
+  			console.log("LOGGADO");
+  			document.getElementById("btnFB").style.visibility = "hidden";
+  			document.getElementById("btnPost").style.visibility = "visible";
+  		}
+  		else{
+  			console.log("NOT LOGADO");
+  			document.getElementById("btnFB").style.visibility = "visible";
+  			document.getElementById("btnPost").style.visibility = "hidden";
+  		}
+  	}
+
+  	function login(){
+  		FB.login(function(response) {
+    		statusChangeCallback(response);
+		});
+  	}
+
+</script>
+
 </html>

@@ -16,7 +16,7 @@ function main(){
 	}
 
 	function bSignPressed(){
-		window.location.href = "../html/SignUp.html"
+		window.location.href = "../html/SignUp_Intro.html"
 	}
 
 

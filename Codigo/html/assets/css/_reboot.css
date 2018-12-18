@@ -1,0 +1,221 @@
+body {
+  font-family: Drugs;
+
+}
+
+
+
+.login-block{
+  background: #66909E;  /* fallback for old browsers */
+  float:left;
+  width:100%;
+  padding : 50px 0;
+}
+.banner-sec{
+  background:url(https://static.pexels.com/photos/33972/pexels-photo.jpg)  no-repeat left bottom;
+  background-size:cover;
+  min-height:500px;
+  border-radius: 0 10px 10px 0;
+  padding:0;
+}
+
+.container{
+  background:#fff;
+  border-radius: 10px;
+}
+
+.carousel-inner{
+  border-radius:0 10px 10px 0;
+}
+
+.carousel-caption{
+  text-align:left;
+  left:5%;
+  margin-top: 250px;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.login-sec
+{padding: 50px 30px;
+  position:relative;
+}
+.login-sec .copy-text{
+  position:absolute;
+  width:80%;
+  bottom:20px;
+  font-size:13px;
+  text-align:center;
+}
+.login-sec .copy-text i {
+  color:#FEB58A;
+}
+
+.login-sec .copy-text a{
+  color:#E36262;
+}
+
+.login-sec h2{
+  font-family: Drugs, sans-serif;
+  margin-bottom:30px;
+  font-weight:bold;
+  font-size:30px;
+  color: #65909E;
+  text-align: center;
+}
+.login-sec h2:after {
+  background: #65909E;
+}
+
+.login-sec h2:after{
+  content:" ";
+  width:100px;
+  height:5px;
+  display:block;
+  margin-top:20px;
+  border-radius:3px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.btn-login{
+  background: #DE6262;
+  color:#fff;
+  font-weight:600;
+}
+
+.banner-text{
+  width:70%;
+  position:absolute;
+  bottom:40px;
+  padding-left:20px;
+}
+
+.banner-text h2{
+  color:#fff;
+  font-weight:600;
+}
+
+.banner-text h2:after{
+  content:" ";
+  width:100px;
+  height:5px;
+  background:#FFF;
+  display:block;
+  margin-top:20px;
+  border-radius:3px;
+}
+
+.banner-text p{
+  color:#fff;
+}
+.d-block {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: block!important;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px){
+  .col-md-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  .container {
+    max-width: 720px;
+  }
+  .col-md-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+}
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+#Password1{
+  padding-top: 20px;
+
+}
+
+#email{
+  width: 100%;
+}
+
+#password{
+  width:100%;
+}
+
+#BRecPass{
+  border: none;
+  background-color: transparent;
+
+  color:#66909E ;
+}
+
+#BLogin {
+  width: 75px;
+  height: 27px;
+  float: right;
+  color: white;
+  background-color: #66909E;
+  border: none;
+  margin-top: -22px;
+}
+
+#ButtonLog{
+  padding-top: 20px;
+
+}
+
+section{
+  margin-top: 150px;
+}
+
+#BLogin2{
+  color:white;
+  background-color: #66909E;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 5px;
+  margin-right: 27px;
+}
+input {
+  border-radius: 7px;
+  height: 29px;
+  width: 100%;
+  margin-bottom: 20px;
+}

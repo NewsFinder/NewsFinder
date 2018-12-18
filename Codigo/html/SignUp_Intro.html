@@ -72,13 +72,13 @@
 </script>
 
 <script type="text/javascript">
-    document.getElementbyId("BLogin2").onClick = window.location.href = "../html/SignUp.html";
+    var blogin = document.getElementById("BLogin2");
+
+    blogin.addEventListener("click", bLoginPressed);
+
+    function bLoginPressed(){
+        window.location.href = "../html/SignUp.html"
+    }
 </script>
 
-
-<!-- ************************************************************ -->
-<head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<!-- ************************************************************ -->
 </html>
